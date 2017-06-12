@@ -4,7 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :cohorts
+  has_many :cohorts, through: :user_cohorts
+  has_many :user_cohorts, dependent: :destroy
+  belongs_to :city
 
   def name
     "#{first_name} #{last_name}"
