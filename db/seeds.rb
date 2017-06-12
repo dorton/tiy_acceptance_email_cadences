@@ -6,23 +6,55 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+def create_city
+  city = City.new
+  city.name = "Houston"
+  city.save!
+end
 
-def create_user
+create_city
+
+
+def create_bob
   user = User.new
   user.first_name = "Bob"
   user.last_name = "Lawblah"
   user.email = "123@123.com"
   user.password = "12345678"
   user.save!
+  user
+  city = City.first
+  city.users << user
 end
 
-create_user
+create_bob
+
+def create_user
+  user = User.new
+  user.first_name = Faker::Name.first_name
+  user.last_name = Faker::Name.last_name
+  user.email = Faker::Internet.email
+  user.password = Faker::Internet.password(8)
+  user.save!
+  user
+  city = City.first
+  city.users << user
+end
+
+3.times do
+  create_user
+end
 
 def create_cohort
-  user = User.first
-  cohort = user.cohorts.new
+  cohort = Cohort.new
   cohort.start_date = "2017-07-17"
   cohort.save!
+  cohort
+
+  users = User.where(city_id: City.first.id)
+  users.each do |user|
+    cohort.users << user
+  end
 end
 
 create_cohort
