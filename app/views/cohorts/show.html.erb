@@ -1,14 +1,13 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Start date:</strong>
-  <%= @cohort.start_date %>
-</p>
+<div class="row">
+  <ul class="collection with-header">
+    <li class="collection-header"><h4>Cohort Students Starting <%= @cohort.start_date.strftime('%m/%d/%Y') %></h4></li>
+    <% @students.each do |student| %>
+      <li class="collection-item"><%= link_to student.name, cohort_student_path(@cohort, student) %> | <%= mail_to student.email, student.email %></li>
+    <% end %>
+  </ul>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @cohort.user %>
-</p>
-
-<%= link_to 'Edit', edit_cohort_path(@cohort) %> |
-<%= link_to 'Back', cohorts_path %>
+<div class="row">
+  <%= link_to "Edit Cohort", edit_cohort_path(@cohort), class: "btn" %>
+</div>
