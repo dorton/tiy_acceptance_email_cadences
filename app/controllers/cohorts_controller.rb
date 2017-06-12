@@ -25,10 +25,12 @@ class CohortsController < ApplicationController
   # POST /cohorts
   # POST /cohorts.json
   def create
+    @city = current_user.city
     @cohort = Cohort.new(cohort_params)
 
     respond_to do |format|
       if @cohort.save
+        @cohort.users << @city.users
         format.html { redirect_to @cohort, notice: 'Cohort was successfully created.' }
         format.json { render :show, status: :created, location: @cohort }
       else
