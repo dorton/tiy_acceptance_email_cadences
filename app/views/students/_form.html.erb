@@ -1,0 +1,19 @@
+<%= simple_form_for(@student) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :email %>
+    <%= f.input :down_payment %>
+    <%= f.input :financially_cleared %>
+    <%= f.input :enrollment_agreement %>
+    <%= f.input :transcript %>
+    <%= f.input :yes_we_code %>
+    <%= f.association :cohort %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

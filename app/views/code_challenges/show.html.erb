@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Newline url:</strong>
+  <%= @code_challenge.newline_url %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @code_challenge.description %>
+</p>
+
+<%= link_to 'Edit', edit_code_challenge_path(@code_challenge) %> |
+<%= link_to 'Back', code_challenges_path %>
