@@ -4,12 +4,13 @@ class CohortsController < ApplicationController
   # GET /cohorts
   # GET /cohorts.json
   def index
-    @cohorts = Cohort.all
+    @cohorts = current_user.cohorts.all
   end
 
   # GET /cohorts/1
   # GET /cohorts/1.json
   def show
+    @students = @cohort.students.all
   end
 
   # GET /cohorts/new

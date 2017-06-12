@@ -10,6 +10,7 @@ class StudentsController < ApplicationController
   # GET /students/1
   # GET /students/1.json
   def show
+    @cohort = Cohort.find(params[:cohort_id])
   end
 
   # GET /students/new
