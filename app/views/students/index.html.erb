@@ -30,9 +30,9 @@
         <td><%= student.transcript %></td>
         <td><%= student.yes_we_code %></td>
         <td><%= student.cohort %></td>
-        <td><%= link_to 'Show', student %></td>
-        <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', cohort_student_path(@cohort, student) %></td>
+        <td><%= link_to 'Edit', edit_cohort_student_path(@cohort, student) %></td>
+        <td><%= link_to 'Destroy', cohort_student_path(@cohort, student), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -40,4 +40,4 @@
 
 <br>
 
-<%= link_to 'New Student', new_student_path %>
+<%= link_to 'New Student', new_cohort_student_path %>
