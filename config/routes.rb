@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  post '/cohorts/:cohort_id/send_mail', to: 'students#send_mail', as: 'send_email'
+
   get 'home/index'
 
   resources :code_challenges

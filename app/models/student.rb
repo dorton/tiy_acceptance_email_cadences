@@ -11,7 +11,7 @@ class Student < ApplicationRecord
       todos << "You can pay your downpayment here: <a href='https://app.moonclerk.com/pay/fbd0e7p7iuo'>https://app.moonclerk.com/pay/fbd0e7p7iuo</a>.".html_safe
     end
     unless student.enrollment_agreement?
-      todos << "Make sure that you have signed you enrollment agreemnt. You can find the link in your acceptance email."
+      todos << "Make sure that you have signed your enrollment agreement. You can find the link in your acceptance email."
     end
     unless student.transcript?
       todos << "You can send Christie your transcripts at <a href='mailto:christie@theironyard.com?subject=Transcripts'>christie@theironyard.com</a>.".html_safe

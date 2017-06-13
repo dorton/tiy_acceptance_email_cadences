@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <div class="row">
+      <p>Greetings, <%= @student.name %>!</p>
+
+      <p>I hope all is well today! We are only <%= @time_to_class %> away from the start of class, and we can't wait to get started!</p>
+
+    <ul class="collection with-header">
+      <li class="collection-header"><h4>Your weekly code challenge:</h4></li>
+      <li class="collection-item"><%= link_to @weekly_challenge.newline_url, @weekly_challenge.newline_url %></li>
+    </ul>
+
+    <% if @announcements.present? %>
+      <ul class="collection with-header">
+        <li class="collection-header"><h4>A Few Announcements:</h4></li>
+        <% @announcements.order(:date).each do |announcement| %>
+          <li class="collection-item"><%= announcement.date.strftime('%m/%d/%Y') %> | <%= announcement.title %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <% if @todos.present? %>
+      <ul class="collection with-header">
+        <li class="collection-header"><h4>A Few Gentle Reminders:</h4></li>
+        <% @todos.each do |todo| %>
+          <li class="collection-item"><%= todo %></li>
+        <% end %>
+      </ul>
+    <% end %>
+    </div>
+  </body>
+</html>

@@ -19,6 +19,14 @@ class StudentsController < ApplicationController
     @todos = Student.todos(@student, @cohort.start_date)
   end
 
+  def send_mail
+    @cohort = Cohort.find(params[:cohort_id])
+    @students = @cohort.students
+    @students.each do |student|
+      StudentMailer.weekly_mailer(@cohort, student).deliver_later
+    end
+  end
+
   # GET /students/new
   def new
     @cohort = Cohort.find(params[:cohort_id])
