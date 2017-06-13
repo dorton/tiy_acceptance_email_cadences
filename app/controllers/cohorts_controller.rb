@@ -11,6 +11,9 @@ class CohortsController < ApplicationController
   # GET /cohorts/1.json
   def show
     @students = @cohort.students.all
+    @students_with_no_items =  @cohort.students.no_todos
+    @students_with_open_items =  @cohort.students.open_todos
+
   end
 
   # GET /cohorts/new

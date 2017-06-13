@@ -1,12 +1,41 @@
 
 <div class="row">
-  <ul class="collection with-header">
-    <li class="collection-header"><h4><%= current_user.city.name %> Students Starting <%= @cohort.start_date.strftime('%m/%d/%Y') %></h4></li>
-    <% @students.each do |student| %>
-      <li class="collection-item"><%= link_to student.name, cohort_student_path(@cohort, student) %> | <%= mail_to student.email, student.email %></li>
-    <% end %>
+
+</div>
+
+<div class="row">
+  <ul class="collapsible" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header active"><i class="material-icons">thumb_down</i>Students With Outstanding Items</div>
+      <div class="collapsible-body"><span>
+        <ul class="collection">
+          <% @students_with_open_items.each do |student| %>
+            <li class="collection-item">
+              <%= link_to student.name, cohort_student_path(@cohort, student) %> | <%= mail_to student.email, student.email %> <br>
+
+              <%= render partial: "students/student_updates", locals: {student: student} %>
+            </li>
+          <% end %>
+        </ul>
+      </span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">thumb_up</i>Students Complete With Paperwork</div>
+      <div class="collapsible-body"><span>
+        <ul class="collection">
+          <% @students_with_no_items.each do |student| %>
+            <li class="collection-item">
+              <%= link_to student.name, cohort_student_path(@cohort, student) %> | <%= mail_to student.email, student.email %> <br>
+
+              <%= render partial: "students/student_updates", locals: {student: student} %>
+            </li>
+          <% end %>
+        </ul>
+      </span></div>
+    </li>
   </ul>
 </div>
+
 
 <div class="row">
   <%= link_to "Send Weeks Emails", send_email_path(@cohort), class: "btn", method: :post, remote: true, data: { confirm: 'Are you sure?' } %>
