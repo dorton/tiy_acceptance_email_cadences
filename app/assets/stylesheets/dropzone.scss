@@ -175,8 +175,9 @@
 
 .dropzone {
   min-height: 150px;
-  border: 2px solid rgba(0, 0, 0, 0.3);
-  background: white;
+  border: 2px dashed #0087F7;
+  border-radius: 5px;
+  background: #f4f4f4;
   padding: 20px 20px; }
   .dropzone.dz-clickable {
     cursor: pointer; }
@@ -191,6 +192,7 @@
     .dropzone.dz-drag-hover .dz-message {
       opacity: 0.5; }
   .dropzone .dz-message {
+    font-size: 32px;
     text-align: center;
     margin: 2em 0; }
   .dropzone .dz-preview {
