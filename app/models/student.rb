@@ -3,6 +3,15 @@ class Student < ApplicationRecord
   scope :open_todos, -> { where(down_payment: false) || where(enrollment_agreement: false) || where(transcript: false) || where(financially_cleared: false)   }
   scope :no_todos, -> { where(down_payment: true).where(enrollment_agreement: true).where(transcript: true).where(financially_cleared: true)   }
 
+  require 'csv'
+
+  def self.import(file, cohort)
+    CSV.foreach(file.path, :headers => true) do |row|
+      cohort.students.create!(row.to_hash)
+    end
+  end
+
+
   def name
     "#{first_name} #{last_name}"
   end

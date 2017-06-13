@@ -10,7 +10,9 @@ Rails.application.routes.draw do
 
 
   resources :cohorts do
-    resources :students
+    resources :students  do
+      collection { post :import }
+    end
   end
 
   root to: "home#index"

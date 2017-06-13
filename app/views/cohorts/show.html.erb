@@ -6,7 +6,7 @@
 <div class="row">
   <ul class="collapsible" data-collapsible="accordion">
     <li>
-      <div class="collapsible-header active"><i class="material-icons">thumb_down</i>Students With Outstanding Items</div>
+      <div class="collapsible-header"><i class="material-icons">thumb_down</i>Students With Outstanding Items</div>
       <div class="collapsible-body"><span>
         <ul class="collection">
           <% @students_with_open_items.each do |student| %>
@@ -44,3 +44,7 @@
 <div class="row">
   <%= link_to "Edit Cohort", edit_cohort_path(@cohort), class: "btn" %>
 </div>
+
+<form action="/file-upload" class="dropzone">
+    <input name="file" type="file" multiple />
+</form>

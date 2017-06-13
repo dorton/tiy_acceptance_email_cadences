@@ -27,6 +27,13 @@ class StudentsController < ApplicationController
     end
   end
 
+  def import
+    @cohort = Cohort.find(params[:cohort_id])
+    @file = params[:file]
+    Student.import(@file, @cohort)
+    redirect_to cohort_path(@cohort), notice: "Products imported."
+  end
+
   # GET /students/new
   def new
     @cohort = Cohort.find(params[:cohort_id])
