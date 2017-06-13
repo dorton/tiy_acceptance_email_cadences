@@ -1,14 +1,4 @@
 <%= simple_form_for([@cohort, student], remote: true) do |f| %>
-
-  <div class="col">
-    <%= f.input :down_payment, input_html: { id: "down-payment-#{student.id}" }  %>
-  </div>
-  <div class="col">
-    <%= f.input :enrollment_agreement, input_html: { id: "enrollment-agreement-#{student.id}" }  %>
-  </div>
-  <div class="col">
-    <%= f.input :financially_cleared, input_html: { id: "financially-cleared-#{student.id}" }  %>
-  </div>
   <div class="col">
     <%= f.input :transcript, input_html: { id: "transcript-#{student.id}" }  %>
   </div>

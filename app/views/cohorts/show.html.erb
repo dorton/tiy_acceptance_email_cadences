@@ -6,7 +6,7 @@
 <div class="row">
   <ul class="collapsible" data-collapsible="accordion">
     <li>
-      <div class="collapsible-header"><i class="material-icons">thumb_down</i>Students With Outstanding Items</div>
+      <div class="collapsible-header"><i class="material-icons">thumb_down</i>Students With Outstanding Items - <%= @students_with_open_items.count %></div>
       <div class="collapsible-body"><span>
         <ul class="collection">
           <% @students_with_open_items.each do |student| %>
@@ -20,7 +20,7 @@
       </span></div>
     </li>
     <li>
-      <div class="collapsible-header"><i class="material-icons">thumb_up</i>Students Complete With Paperwork</div>
+      <div class="collapsible-header"><i class="material-icons">thumb_up</i>Students Complete With Paperwork - <%= @students_with_no_items.count %></div>
       <div class="collapsible-body"><span>
         <ul class="collection">
           <% @students_with_no_items.each do |student| %>
@@ -45,6 +45,9 @@
   <%= link_to "Edit Cohort", edit_cohort_path(@cohort), class: "btn" %>
 </div>
 
-<form action="/file-upload" class="dropzone">
-    <input name="file" type="file" multiple />
-</form>
+<%= form_tag "/cohorts/#{@cohort.id}/students/import", method: :post, class: 'dropzone form', id: 'media-dropzone' do %>
+  <div class="dz-message" data-dz-message><span>Drop Yo .CSV Here</span></div>
+  <div class="fallback">
+    <%= file_field_tag 'media', multiple: true %>
+  </div>
+<% end %>
