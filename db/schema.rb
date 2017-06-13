@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170612191808) do
+ActiveRecord::Schema.define(version: 20170613151923) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,14 +50,14 @@ ActiveRecord::Schema.define(version: 20170612191808) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
-    t.boolean  "down_payment"
-    t.boolean  "financially_cleared"
-    t.boolean  "enrollment_agreement"
-    t.boolean  "transcript"
-    t.boolean  "yes_we_code"
+    t.boolean  "down_payment",         default: false
+    t.boolean  "financially_cleared",  default: false
+    t.boolean  "enrollment_agreement", default: false
+    t.boolean  "transcript",           default: false
+    t.boolean  "yes_we_code",          default: false
     t.integer  "cohort_id"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
     t.index ["cohort_id"], name: "index_students_on_cohort_id", using: :btree
   end
 
