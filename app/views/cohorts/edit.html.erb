@@ -1,6 +1,14 @@
 <h1>Editing Cohort</h1>
 
-<%= render 'form', cohort: @cohort %>
+<div class="row">
+  <%= render 'form', cohort: @cohort %>
+</div>
 
-<%= link_to 'Show', @cohort %> |
-<%= link_to 'Back', cohorts_path %>
+
+
+<div class="row">
+  <%= link_to 'Delete Cohort', cohort_path(@cohort),
+              class: "btn red",
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+</div>
