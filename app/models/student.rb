@@ -1,5 +1,7 @@
 class Student < ApplicationRecord
   belongs_to :cohort
+  scope :open_todos, -> { where(down_payment: false) || where(enrollment_agreement: false) || where(transcript: false) || where(financially_cleared: false)   }
+  scope :no_todos, -> { where(down_payment: true).where(enrollment_agreement: true).where(transcript: true).where(financially_cleared: true)   }
 
   def name
     "#{first_name} #{last_name}"
