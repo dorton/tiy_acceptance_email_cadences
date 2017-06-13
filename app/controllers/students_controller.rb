@@ -1,21 +1,28 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
+  include ActionView::Helpers::DateHelper
 
   # GET /students
   # GET /students.json
   def index
-    @students = Student.all
+    @cohort = Cohort.find(params[:cohort_id])
+    @students = @cohort.students.all
   end
 
   # GET /students/1
   # GET /students/1.json
   def show
     @cohort = Cohort.find(params[:cohort_id])
+    @time_to_class = distance_of_time_in_words(Date.today, @cohort.start_date)
+    @weekly_challenge = CodeChallenge.weekly(@cohort.start_date)
+    @announcements = @cohort.announcements.where('date > ?', Date.today).where('date < ?', Date.today + 3.weeks)
+    @todos = Student.todos(@student, @cohort.start_date)
   end
 
   # GET /students/new
   def new
-    @student = Student.new
+    @cohort = Cohort.find(params[:cohort_id])
+    @student = @cohort.students.new
   end
 
   # GET /students/1/edit

@@ -1,49 +1,28 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <p>Greetings, <%= @student.name %>!</p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @student.first_name %>
-</p>
+  <p>I hope all is well today! We are only <%= @time_to_class %> away from the start of class! We can't wait to get started!</p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @student.last_name %>
-</p>
+<ul class="collection with-header">
+  <li class="collection-header"><h4>Your weekly code challenge:</h4></li>
+  <li class="collection-item"><%= link_to @weekly_challenge.newline_url, @weekly_challenge.newline_url %></li>
+</ul>
 
-<p>
-  <strong>Email:</strong>
-  <%= @student.email %>
-</p>
+<% if @announcements.present? %>
+  <ul class="collection with-header">
+    <li class="collection-header"><h4>A Few Announcements:</h4></li>
+    <% @announcements.order(:date).each do |announcement| %>
+      <li class="collection-item"><%= announcement.date.strftime('%m/%d/%Y') %> | <%= announcement.title %></li>
+    <% end %>
+  </ul>
+<% end %>
 
-<p>
-  <strong>Down payment:</strong>
-  <%= @student.down_payment %>
-</p>
-
-<p>
-  <strong>Financially cleared:</strong>
-  <%= @student.financially_cleared %>
-</p>
-
-<p>
-  <strong>Enrollment agreement:</strong>
-  <%= @student.enrollment_agreement %>
-</p>
-
-<p>
-  <strong>Transcript:</strong>
-  <%= @student.transcript %>
-</p>
-
-<p>
-  <strong>Yes we code:</strong>
-  <%= @student.yes_we_code %>
-</p>
-
-<p>
-  <strong>Cohort:</strong>
-  <%= @student.cohort %>
-</p>
-
-<%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>
+<% if @todos.present? %>
+  <ul class="collection with-header">
+    <li class="collection-header"><h4>A Few Gentle Reminders:</h4></li>
+    <% @todos.each do |todo| %>
+      <li class="collection-item"><%= todo %></li>
+    <% end %>
+  </ul>
+<% end %>
+</div>
