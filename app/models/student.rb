@@ -1,15 +1,35 @@
 class Student < ApplicationRecord
   belongs_to :cohort
-  scope :open_todos, -> { where(down_payment: false) || where(enrollment_agreement: false) || where(transcript: false) || where(financially_cleared: false)   }
-  scope :no_todos, -> { where(down_payment: true).where(enrollment_agreement: true).where(transcript: true).where(financially_cleared: true)   }
+
+  scope :open_todos, -> {
+      where(down_payment: false)
+      .or(where(enrollment_agreement: false))
+      .or(where(transcript: false))
+      .or(where(financially_cleared: false))
+    }
+
+  scope :no_todos, -> {
+      where(down_payment: true)
+      .where(enrollment_agreement: true)
+      .where(transcript: true)
+      .where(financially_cleared: true)
+    }
 
   require 'csv'
 
   def self.import(file, cohort)
-    CSV.foreach(file.path, :headers => true) do |row|
-      cohort.students.create!(row.to_hash)
+    CSV.foreach(file.path, headers: true) do |row|
+      student = cohort.students.find_or_initialize_by(email: row['Email'])
+      student.first_name = row['First Name']
+      student.last_name = row['Last Name']
+      student.enrollment_agreement = row['Student Has Signed Student Agreement?'] == 'Yes'
+      student.down_payment = row['Financial Status'] == 'Deposit Received'
+      student.financially_cleared = row['Financial Status'] == 'Financially Cleared'
+      student.yes_we_code = row['Financial Status'] == 'Full Tuition Grant'
+      student.save!
     end
   end
+
 
 
   def name

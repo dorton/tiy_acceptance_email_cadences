@@ -30,8 +30,9 @@ class StudentsController < ApplicationController
   def import
     @cohort = Cohort.find(params[:cohort_id])
     @file = params[:file]
-    Student.import(@file, @cohort)
-    redirect_to cohort_path(@cohort), notice: "Products imported."
+    if Student.import(@file, @cohort)
+      redirect_to cohort_path(@cohort), notice: "Done and Done."
+    end
   end
 
   # GET /students/new
@@ -42,6 +43,7 @@ class StudentsController < ApplicationController
 
   # GET /students/1/edit
   def edit
+    @cohort = Cohort.find(params[:cohort_id])
   end
 
   # POST /students
