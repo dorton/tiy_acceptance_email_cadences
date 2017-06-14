@@ -22,7 +22,7 @@ class StudentsController < ApplicationController
   def send_mail
     @cohort = Cohort.find(params[:cohort_id])
     @students = @cohort.students
-    @students.each do |student|
+    @students.ok_to_email.each do |student|
       StudentMailer.weekly_mailer(@cohort, student).deliver_later
     end
   end
@@ -86,6 +86,6 @@ class StudentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
-      params.require(:student).permit(:first_name, :last_name, :email, :down_payment, :financially_cleared, :enrollment_agreement, :transcript, :yes_we_code, :cohort_id)
+      params.require(:student).permit(:first_name, :last_name, :email, :down_payment, :financially_cleared, :enrollment_agreement, :transcript, :yes_we_code, :cohort_id, :do_not_send)
     end
 end

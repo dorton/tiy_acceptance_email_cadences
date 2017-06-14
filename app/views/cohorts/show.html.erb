@@ -38,7 +38,7 @@
 
 
 <div class="row">
-  <%= link_to "Send Weeks Emails", send_email_path(@cohort), class: "btn", method: :post, remote: true, data: { confirm: 'Are you sure?' } %>
+  <%= link_to "Send Weeks Emails", send_email_path(@cohort), class: "btn", method: :post, remote: true, data: { confirm: 'Are you sure?', "disable-with": "Sending..." }%>
 </div>
 
 <div class="row">

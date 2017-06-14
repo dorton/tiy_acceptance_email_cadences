@@ -1,0 +1,2213 @@
+<!DOCTYPE html>
+<html lang="en" style='font-family: "Roboto", sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box; line-height: 1.5; font-weight: normal; color: rgba(0,0,0,0.87);'>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="description" content="Materialize is a modern responsive CSS framework based on Material Design by Google. ">
+    <title>Documentation - Materialize</title>
+    <!-- Favicons-->
+    <link rel="apple-touch-icon-precomposed" href="http://materializecss.com/images/favicon/apple-touch-icon-152x152.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
+    <link rel="icon" href="http://materializecss.com/images/favicon/favicon-32x32.png" sizes="32x32">
+    <!--  Android 5 Chrome Color-->
+    <meta name="theme-color" content="#EE6E73">
+    <!-- CSS-->
+    
+    
+    
+    
+    
+    
+  <style>pre[class*="language-"]::selection {
+text-shadow: none; background: #b3d4fc;
+}
+pre[class*="language-"] ::selection {
+text-shadow: none; background: #b3d4fc;
+}
+code[class*="language-"]::selection {
+text-shadow: none; background: #b3d4fc;
+}
+code[class*="language-"] ::selection {
+text-shadow: none; background: #b3d4fc;
+}
+body {
+margin: 0;
+}
+a:active {
+outline: 0;
+}
+a:hover {
+outline: 0;
+}
+img {
+border: 0;
+}
+*:before {
+box-sizing: inherit;
+}
+*:after {
+box-sizing: inherit;
+}
+body.themes .themes-section {
+display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center;
+}
+.btn:hover {
+box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14),0 1px 7px 0 rgba(0,0,0,0.12),0 3px 1px -1px rgba(0,0,0,0.2);
+}
+.btn-large:hover {
+box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14),0 1px 7px 0 rgba(0,0,0,0.12),0 3px 1px -1px rgba(0,0,0,0.2);
+}
+.btn-floating:hover {
+box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14),0 1px 7px 0 rgba(0,0,0,0.12),0 3px 1px -1px rgba(0,0,0,0.2);
+}
+.hoverable:hover {
+transition: box-shadow .25s; box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.breadcrumb:before {
+content: '\E5CC'; color: rgba(255,255,255,0.7); vertical-align: top; display: inline-block; font-family: 'Material Icons'; font-weight: normal; font-style: normal; font-size: 25px; margin: 0 10px 0 8px; -webkit-font-smoothing: antialiased;
+}
+.breadcrumb:first-child:before {
+display: none;
+}
+table.highlight>tbody>tr:hover {
+background-color: #f2f2f2;
+}
+.collection a.collection-item:not(.active):hover {
+background-color: #ddd;
+}
+.progress .indeterminate:before {
+content: ''; position: absolute; background-color: inherit; top: 0; left: 0; bottom: 0; will-change: left, right; -webkit-animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite; animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+}
+.progress .indeterminate:after {
+content: ''; position: absolute; background-color: inherit; top: 0; left: 0; bottom: 0; will-change: left, right; -webkit-animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite; animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite; -webkit-animation-delay: 1.15s; animation-delay: 1.15s;
+}
+@-webkit-keyframes indeterminate {
+
+}
+@keyframes indeterminate {
+
+}
+@-webkit-keyframes indeterminate-short {
+
+}
+@keyframes indeterminate-short {
+
+}
+span.badge.new:after {
+content: " new";
+}
+span.badge[data-badge-caption]::after {
+content: " " attr(data-badge-caption);
+}
+.row:after {
+content: ""; display: table; clear: both;
+}
+nav ul a:hover {
+background-color: rgba(0,0,0,0.1);
+}
+nav .input-field input:focus {
+border: none; box-shadow: none;
+}
+@font-face {
+font-family: "Roboto"; src: local(Roboto Thin),url('http://materializecss.com/fonts/roboto/Roboto-Thin.woff2') format("woff2"),url('http://materializecss.com/fonts/roboto/Roboto-Thin.woff') format("woff"); font-weight: 100;
+}
+@font-face {
+font-family: "Roboto"; src: local(Roboto Light),url('http://materializecss.com/fonts/roboto/Roboto-Light.woff2') format("woff2"),url('http://materializecss.com/fonts/roboto/Roboto-Light.woff') format("woff"); font-weight: 300;
+}
+@font-face {
+font-family: "Roboto"; src: local(Roboto Regular),url('http://materializecss.com/fonts/roboto/Roboto-Regular.woff2') format("woff2"),url('http://materializecss.com/fonts/roboto/Roboto-Regular.woff') format("woff"); font-weight: 400;
+}
+@font-face {
+font-family: "Roboto"; src: local(Roboto Medium),url('http://materializecss.com/fonts/roboto/Roboto-Medium.woff2') format("woff2"),url('http://materializecss.com/fonts/roboto/Roboto-Medium.woff') format("woff"); font-weight: 500;
+}
+@font-face {
+font-family: "Roboto"; src: local(Roboto Bold),url('http://materializecss.com/fonts/roboto/Roboto-Bold.woff2') format("woff2"),url('http://materializecss.com/fonts/roboto/Roboto-Bold.woff') format("woff"); font-weight: 700;
+}
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating):hover {
+color: #ffd8a6;
+}
+.tabs.tabs-transparent .tab.disabled a:hover {
+color: rgba(255,255,255,0.7);
+}
+.tabs.tabs-transparent .tab a:hover {
+color: #fff;
+}
+.tabs .tab a:hover {
+background-color: transparent; color: #ee6e73;
+}
+.tabs .tab.disabled a:hover {
+color: rgba(238,110,115,0.7); cursor: default;
+}
+.btn.disabled:hover {
+background-color: #DFDFDF !important; color: #9F9F9F !important;
+}
+.disabled.btn-large:hover {
+background-color: #DFDFDF !important; color: #9F9F9F !important;
+}
+.btn-floating.disabled:hover {
+background-color: #DFDFDF !important; color: #9F9F9F !important;
+}
+.btn-large.disabled:hover {
+background-color: #DFDFDF !important; color: #9F9F9F !important;
+}
+.btn-flat.disabled:hover {
+background-color: #DFDFDF !important; color: #9F9F9F !important;
+}
+.btn:disabled:hover {
+background-color: #DFDFDF !important; color: #9F9F9F !important;
+}
+.btn-large:disabled:hover {
+background-color: #DFDFDF !important; color: #9F9F9F !important;
+}
+.btn-floating:disabled:hover {
+background-color: #DFDFDF !important; color: #9F9F9F !important;
+}
+.btn-large:disabled:hover {
+background-color: #DFDFDF !important; color: #9F9F9F !important;
+}
+.btn-flat:disabled:hover {
+background-color: #DFDFDF !important; color: #9F9F9F !important;
+}
+.btn[disabled]:hover {
+background-color: #DFDFDF !important; color: #9F9F9F !important;
+}
+[disabled].btn-large:hover {
+background-color: #DFDFDF !important; color: #9F9F9F !important;
+}
+.btn-floating[disabled]:hover {
+background-color: #DFDFDF !important; color: #9F9F9F !important;
+}
+.btn-large[disabled]:hover {
+background-color: #DFDFDF !important; color: #9F9F9F !important;
+}
+.btn-flat[disabled]:hover {
+background-color: #DFDFDF !important; color: #9F9F9F !important;
+}
+.btn:focus {
+background-color: #1d7d74;
+}
+.btn-large:focus {
+background-color: #1d7d74;
+}
+.btn-floating:focus {
+background-color: #1d7d74;
+}
+.btn:hover {
+background-color: #2bbbad;
+}
+.btn-large:hover {
+background-color: #2bbbad;
+}
+.btn-floating:hover {
+background-color: #26a69a;
+}
+.btn-floating:before {
+border-radius: 0;
+}
+.btn-flat:focus {
+background-color: transparent;
+}
+.btn-flat:active {
+background-color: transparent;
+}
+.btn-flat:focus {
+background-color: rgba(0,0,0,0.1); box-shadow: none;
+}
+.btn-flat:hover {
+background-color: rgba(0,0,0,0.1); box-shadow: none;
+}
+.btn-flat:active {
+background-color: rgba(0,0,0,0.2);
+}
+.dropdown-content li:hover {
+background-color: #eee;
+}
+.side-nav .collapsible-header:hover {
+background-color: rgba(0,0,0,0.05);
+}
+.side-nav.fixed .collapsible-header:hover {
+background-color: rgba(0,0,0,0.05);
+}
+.chips:hover {
+cursor: text;
+}
+.chips .input:focus {
+border: 0 !important; box-shadow: none !important;
+}
+.materialboxed:hover:not(.active) {
+opacity: .8;
+}
+select:focus {
+outline: 1px solid #c9f3ef;
+}
+button:focus {
+outline: none; background-color: #2ab7a9;
+}
+input:not([type]):focus:not([readonly]) {
+border-bottom: 1px solid #26a69a; box-shadow: 0 1px 0 0 #26a69a;
+}
+input[type=text]:focus:not([readonly]) {
+border-bottom: 1px solid #26a69a; box-shadow: 0 1px 0 0 #26a69a;
+}
+input[type=password]:focus:not([readonly]) {
+border-bottom: 1px solid #26a69a; box-shadow: 0 1px 0 0 #26a69a;
+}
+input[type=email]:focus:not([readonly]) {
+border-bottom: 1px solid #26a69a; box-shadow: 0 1px 0 0 #26a69a;
+}
+input[type=url]:focus:not([readonly]) {
+border-bottom: 1px solid #26a69a; box-shadow: 0 1px 0 0 #26a69a;
+}
+input[type=time]:focus:not([readonly]) {
+border-bottom: 1px solid #26a69a; box-shadow: 0 1px 0 0 #26a69a;
+}
+input[type=date]:focus:not([readonly]) {
+border-bottom: 1px solid #26a69a; box-shadow: 0 1px 0 0 #26a69a;
+}
+input[type=datetime]:focus:not([readonly]) {
+border-bottom: 1px solid #26a69a; box-shadow: 0 1px 0 0 #26a69a;
+}
+input[type=datetime-local]:focus:not([readonly]) {
+border-bottom: 1px solid #26a69a; box-shadow: 0 1px 0 0 #26a69a;
+}
+input[type=tel]:focus:not([readonly]) {
+border-bottom: 1px solid #26a69a; box-shadow: 0 1px 0 0 #26a69a;
+}
+input[type=number]:focus:not([readonly]) {
+border-bottom: 1px solid #26a69a; box-shadow: 0 1px 0 0 #26a69a;
+}
+input[type=search]:focus:not([readonly]) {
+border-bottom: 1px solid #26a69a; box-shadow: 0 1px 0 0 #26a69a;
+}
+textarea.materialize-textarea:focus:not([readonly]) {
+border-bottom: 1px solid #26a69a; box-shadow: 0 1px 0 0 #26a69a;
+}
+input:not([type]):focus:not([readonly])+label {
+color: #26a69a;
+}
+input[type=text]:focus:not([readonly])+label {
+color: #26a69a;
+}
+input[type=password]:focus:not([readonly])+label {
+color: #26a69a;
+}
+input[type=email]:focus:not([readonly])+label {
+color: #26a69a;
+}
+input[type=url]:focus:not([readonly])+label {
+color: #26a69a;
+}
+input[type=time]:focus:not([readonly])+label {
+color: #26a69a;
+}
+input[type=date]:focus:not([readonly])+label {
+color: #26a69a;
+}
+input[type=datetime]:focus:not([readonly])+label {
+color: #26a69a;
+}
+input[type=datetime-local]:focus:not([readonly])+label {
+color: #26a69a;
+}
+input[type=tel]:focus:not([readonly])+label {
+color: #26a69a;
+}
+input[type=number]:focus:not([readonly])+label {
+color: #26a69a;
+}
+input[type=search]:focus:not([readonly])+label {
+color: #26a69a;
+}
+textarea.materialize-textarea:focus:not([readonly])+label {
+color: #26a69a;
+}
+input:not([type]):focus.valid {
+border-bottom: 1px solid #4CAF50; box-shadow: 0 1px 0 0 #4CAF50;
+}
+input[type=text]:focus.valid {
+border-bottom: 1px solid #4CAF50; box-shadow: 0 1px 0 0 #4CAF50;
+}
+input[type=password]:focus.valid {
+border-bottom: 1px solid #4CAF50; box-shadow: 0 1px 0 0 #4CAF50;
+}
+input[type=email]:focus.valid {
+border-bottom: 1px solid #4CAF50; box-shadow: 0 1px 0 0 #4CAF50;
+}
+input[type=url]:focus.valid {
+border-bottom: 1px solid #4CAF50; box-shadow: 0 1px 0 0 #4CAF50;
+}
+input[type=time]:focus.valid {
+border-bottom: 1px solid #4CAF50; box-shadow: 0 1px 0 0 #4CAF50;
+}
+input[type=date]:focus.valid {
+border-bottom: 1px solid #4CAF50; box-shadow: 0 1px 0 0 #4CAF50;
+}
+input[type=datetime]:focus.valid {
+border-bottom: 1px solid #4CAF50; box-shadow: 0 1px 0 0 #4CAF50;
+}
+input[type=datetime-local]:focus.valid {
+border-bottom: 1px solid #4CAF50; box-shadow: 0 1px 0 0 #4CAF50;
+}
+input[type=tel]:focus.valid {
+border-bottom: 1px solid #4CAF50; box-shadow: 0 1px 0 0 #4CAF50;
+}
+input[type=number]:focus.valid {
+border-bottom: 1px solid #4CAF50; box-shadow: 0 1px 0 0 #4CAF50;
+}
+input[type=search]:focus.valid {
+border-bottom: 1px solid #4CAF50; box-shadow: 0 1px 0 0 #4CAF50;
+}
+textarea.materialize-textarea:focus.valid {
+border-bottom: 1px solid #4CAF50; box-shadow: 0 1px 0 0 #4CAF50;
+}
+input:not([type]).valid+label:after {
+content: attr(data-success); color: #4CAF50; opacity: 1;
+}
+input:not([type]):focus.valid+label:after {
+content: attr(data-success); color: #4CAF50; opacity: 1;
+}
+input[type=text].valid+label:after {
+content: attr(data-success); color: #4CAF50; opacity: 1;
+}
+input[type=text]:focus.valid+label:after {
+content: attr(data-success); color: #4CAF50; opacity: 1;
+}
+input[type=password].valid+label:after {
+content: attr(data-success); color: #4CAF50; opacity: 1;
+}
+input[type=password]:focus.valid+label:after {
+content: attr(data-success); color: #4CAF50; opacity: 1;
+}
+input[type=email].valid+label:after {
+content: attr(data-success); color: #4CAF50; opacity: 1;
+}
+input[type=email]:focus.valid+label:after {
+content: attr(data-success); color: #4CAF50; opacity: 1;
+}
+input[type=url].valid+label:after {
+content: attr(data-success); color: #4CAF50; opacity: 1;
+}
+input[type=url]:focus.valid+label:after {
+content: attr(data-success); color: #4CAF50; opacity: 1;
+}
+input[type=time].valid+label:after {
+content: attr(data-success); color: #4CAF50; opacity: 1;
+}
+input[type=time]:focus.valid+label:after {
+content: attr(data-success); color: #4CAF50; opacity: 1;
+}
+input[type=date].valid+label:after {
+content: attr(data-success); color: #4CAF50; opacity: 1;
+}
+input[type=date]:focus.valid+label:after {
+content: attr(data-success); color: #4CAF50; opacity: 1;
+}
+input[type=datetime].valid+label:after {
+content: attr(data-success); color: #4CAF50; opacity: 1;
+}
+input[type=datetime]:focus.valid+label:after {
+content: attr(data-success); color: #4CAF50; opacity: 1;
+}
+input[type=datetime-local].valid+label:after {
+content: attr(data-success); color: #4CAF50; opacity: 1;
+}
+input[type=datetime-local]:focus.valid+label:after {
+content: attr(data-success); color: #4CAF50; opacity: 1;
+}
+input[type=tel].valid+label:after {
+content: attr(data-success); color: #4CAF50; opacity: 1;
+}
+input[type=tel]:focus.valid+label:after {
+content: attr(data-success); color: #4CAF50; opacity: 1;
+}
+input[type=number].valid+label:after {
+content: attr(data-success); color: #4CAF50; opacity: 1;
+}
+input[type=number]:focus.valid+label:after {
+content: attr(data-success); color: #4CAF50; opacity: 1;
+}
+input[type=search].valid+label:after {
+content: attr(data-success); color: #4CAF50; opacity: 1;
+}
+input[type=search]:focus.valid+label:after {
+content: attr(data-success); color: #4CAF50; opacity: 1;
+}
+textarea.materialize-textarea.valid+label:after {
+content: attr(data-success); color: #4CAF50; opacity: 1;
+}
+textarea.materialize-textarea:focus.valid+label:after {
+content: attr(data-success); color: #4CAF50; opacity: 1;
+}
+input:not([type]):focus.invalid {
+border-bottom: 1px solid #F44336; box-shadow: 0 1px 0 0 #F44336;
+}
+input[type=text]:focus.invalid {
+border-bottom: 1px solid #F44336; box-shadow: 0 1px 0 0 #F44336;
+}
+input[type=password]:focus.invalid {
+border-bottom: 1px solid #F44336; box-shadow: 0 1px 0 0 #F44336;
+}
+input[type=email]:focus.invalid {
+border-bottom: 1px solid #F44336; box-shadow: 0 1px 0 0 #F44336;
+}
+input[type=url]:focus.invalid {
+border-bottom: 1px solid #F44336; box-shadow: 0 1px 0 0 #F44336;
+}
+input[type=time]:focus.invalid {
+border-bottom: 1px solid #F44336; box-shadow: 0 1px 0 0 #F44336;
+}
+input[type=date]:focus.invalid {
+border-bottom: 1px solid #F44336; box-shadow: 0 1px 0 0 #F44336;
+}
+input[type=datetime]:focus.invalid {
+border-bottom: 1px solid #F44336; box-shadow: 0 1px 0 0 #F44336;
+}
+input[type=datetime-local]:focus.invalid {
+border-bottom: 1px solid #F44336; box-shadow: 0 1px 0 0 #F44336;
+}
+input[type=tel]:focus.invalid {
+border-bottom: 1px solid #F44336; box-shadow: 0 1px 0 0 #F44336;
+}
+input[type=number]:focus.invalid {
+border-bottom: 1px solid #F44336; box-shadow: 0 1px 0 0 #F44336;
+}
+input[type=search]:focus.invalid {
+border-bottom: 1px solid #F44336; box-shadow: 0 1px 0 0 #F44336;
+}
+textarea.materialize-textarea:focus.invalid {
+border-bottom: 1px solid #F44336; box-shadow: 0 1px 0 0 #F44336;
+}
+input:not([type]).invalid+label:after {
+content: attr(data-error); color: #F44336; opacity: 1;
+}
+input:not([type]):focus.invalid+label:after {
+content: attr(data-error); color: #F44336; opacity: 1;
+}
+input[type=text].invalid+label:after {
+content: attr(data-error); color: #F44336; opacity: 1;
+}
+input[type=text]:focus.invalid+label:after {
+content: attr(data-error); color: #F44336; opacity: 1;
+}
+input[type=password].invalid+label:after {
+content: attr(data-error); color: #F44336; opacity: 1;
+}
+input[type=password]:focus.invalid+label:after {
+content: attr(data-error); color: #F44336; opacity: 1;
+}
+input[type=email].invalid+label:after {
+content: attr(data-error); color: #F44336; opacity: 1;
+}
+input[type=email]:focus.invalid+label:after {
+content: attr(data-error); color: #F44336; opacity: 1;
+}
+input[type=url].invalid+label:after {
+content: attr(data-error); color: #F44336; opacity: 1;
+}
+input[type=url]:focus.invalid+label:after {
+content: attr(data-error); color: #F44336; opacity: 1;
+}
+input[type=time].invalid+label:after {
+content: attr(data-error); color: #F44336; opacity: 1;
+}
+input[type=time]:focus.invalid+label:after {
+content: attr(data-error); color: #F44336; opacity: 1;
+}
+input[type=date].invalid+label:after {
+content: attr(data-error); color: #F44336; opacity: 1;
+}
+input[type=date]:focus.invalid+label:after {
+content: attr(data-error); color: #F44336; opacity: 1;
+}
+input[type=datetime].invalid+label:after {
+content: attr(data-error); color: #F44336; opacity: 1;
+}
+input[type=datetime]:focus.invalid+label:after {
+content: attr(data-error); color: #F44336; opacity: 1;
+}
+input[type=datetime-local].invalid+label:after {
+content: attr(data-error); color: #F44336; opacity: 1;
+}
+input[type=datetime-local]:focus.invalid+label:after {
+content: attr(data-error); color: #F44336; opacity: 1;
+}
+input[type=tel].invalid+label:after {
+content: attr(data-error); color: #F44336; opacity: 1;
+}
+input[type=tel]:focus.invalid+label:after {
+content: attr(data-error); color: #F44336; opacity: 1;
+}
+input[type=number].invalid+label:after {
+content: attr(data-error); color: #F44336; opacity: 1;
+}
+input[type=number]:focus.invalid+label:after {
+content: attr(data-error); color: #F44336; opacity: 1;
+}
+input[type=search].invalid+label:after {
+content: attr(data-error); color: #F44336; opacity: 1;
+}
+input[type=search]:focus.invalid+label:after {
+content: attr(data-error); color: #F44336; opacity: 1;
+}
+textarea.materialize-textarea.invalid+label:after {
+content: attr(data-error); color: #F44336; opacity: 1;
+}
+textarea.materialize-textarea:focus.invalid+label:after {
+content: attr(data-error); color: #F44336; opacity: 1;
+}
+input:not([type])+label:after {
+display: block; content: ""; position: absolute; top: 60px; opacity: 0; transition: .2s opacity ease-out, .2s color ease-out;
+}
+input[type=text]+label:after {
+display: block; content: ""; position: absolute; top: 60px; opacity: 0; transition: .2s opacity ease-out, .2s color ease-out;
+}
+input[type=password]+label:after {
+display: block; content: ""; position: absolute; top: 60px; opacity: 0; transition: .2s opacity ease-out, .2s color ease-out;
+}
+input[type=email]+label:after {
+display: block; content: ""; position: absolute; top: 60px; opacity: 0; transition: .2s opacity ease-out, .2s color ease-out;
+}
+input[type=url]+label:after {
+display: block; content: ""; position: absolute; top: 60px; opacity: 0; transition: .2s opacity ease-out, .2s color ease-out;
+}
+input[type=time]+label:after {
+display: block; content: ""; position: absolute; top: 60px; opacity: 0; transition: .2s opacity ease-out, .2s color ease-out;
+}
+input[type=date]+label:after {
+display: block; content: ""; position: absolute; top: 60px; opacity: 0; transition: .2s opacity ease-out, .2s color ease-out;
+}
+input[type=datetime]+label:after {
+display: block; content: ""; position: absolute; top: 60px; opacity: 0; transition: .2s opacity ease-out, .2s color ease-out;
+}
+input[type=datetime-local]+label:after {
+display: block; content: ""; position: absolute; top: 60px; opacity: 0; transition: .2s opacity ease-out, .2s color ease-out;
+}
+input[type=tel]+label:after {
+display: block; content: ""; position: absolute; top: 60px; opacity: 0; transition: .2s opacity ease-out, .2s color ease-out;
+}
+input[type=number]+label:after {
+display: block; content: ""; position: absolute; top: 60px; opacity: 0; transition: .2s opacity ease-out, .2s color ease-out;
+}
+input[type=search]+label:after {
+display: block; content: ""; position: absolute; top: 60px; opacity: 0; transition: .2s opacity ease-out, .2s color ease-out;
+}
+textarea.materialize-textarea+label:after {
+display: block; content: ""; position: absolute; top: 60px; opacity: 0; transition: .2s opacity ease-out, .2s color ease-out;
+}
+.input-field input[type=search]:focus {
+background-color: #fff; border: 0; box-shadow: none; color: #444;
+}
+.input-field input[type=search]:focus+label i {
+color: #444;
+}
+.input-field input[type=search]:focus ~ .mdi-navigation-close {
+color: #444;
+}
+.input-field input[type=search]:focus ~ .material-icons {
+color: #444;
+}
+[type="radio"]+label:before {
+content: ''; position: absolute; left: 0; top: 0; margin: 4px; width: 16px; height: 16px; z-index: 0; transition: .28s ease;
+}
+[type="radio"]+label:after {
+content: ''; position: absolute; left: 0; top: 0; margin: 4px; width: 16px; height: 16px; z-index: 0; transition: .28s ease;
+}
+[type="radio"]:not(:checked)+label:before {
+border-radius: 50%;
+}
+[type="radio"]:not(:checked)+label:after {
+border-radius: 50%;
+}
+[type="radio"]:checked+label:before {
+border-radius: 50%;
+}
+[type="radio"]:checked+label:after {
+border-radius: 50%;
+}
+[type="radio"].with-gap:checked+label:before {
+border-radius: 50%;
+}
+[type="radio"].with-gap:checked+label:after {
+border-radius: 50%;
+}
+[type="radio"]:not(:checked)+label:before {
+border: 2px solid #5a5a5a;
+}
+[type="radio"]:not(:checked)+label:after {
+border: 2px solid #5a5a5a;
+}
+[type="radio"]:not(:checked)+label:after {
+-webkit-transform: scale(0); transform: scale(0);
+}
+[type="radio"]:checked+label:before {
+border: 2px solid transparent;
+}
+[type="radio"]:checked+label:after {
+border: 2px solid #26a69a;
+}
+[type="radio"].with-gap:checked+label:before {
+border: 2px solid #26a69a;
+}
+[type="radio"].with-gap:checked+label:after {
+border: 2px solid #26a69a;
+}
+[type="radio"]:checked+label:after {
+background-color: #26a69a;
+}
+[type="radio"].with-gap:checked+label:after {
+background-color: #26a69a;
+}
+[type="radio"]:checked+label:after {
+-webkit-transform: scale(1.02); transform: scale(1.02);
+}
+[type="radio"].with-gap:checked+label:after {
+-webkit-transform: scale(0.5); transform: scale(0.5);
+}
+[type="radio"].tabbed:focus+label:before {
+box-shadow: 0 0 0 10px rgba(0,0,0,0.1);
+}
+[type="radio"].with-gap:disabled:checked+label:before {
+border: 2px solid rgba(0,0,0,0.26);
+}
+[type="radio"].with-gap:disabled:checked+label:after {
+border: none; background-color: rgba(0,0,0,0.26);
+}
+[type="radio"]:disabled:not(:checked)+label:before {
+background-color: transparent; border-color: rgba(0,0,0,0.26);
+}
+[type="radio"]:disabled:checked+label:before {
+background-color: transparent; border-color: rgba(0,0,0,0.26);
+}
+[type="radio"]:disabled:not(:checked)+label:before {
+border-color: rgba(0,0,0,0.26);
+}
+[type="radio"]:disabled:checked+label:after {
+background-color: rgba(0,0,0,0.26); border-color: #BDBDBD;
+}
+[type="checkbox"]+label:before {
+content: ''; position: absolute; top: 0; left: 0; width: 18px; height: 18px; z-index: 0; border: 2px solid #5a5a5a; border-radius: 1px; margin-top: 2px; transition: .2s;
+}
+[type="checkbox"]:not(.filled-in)+label:after {
+content: ''; position: absolute; top: 0; left: 0; width: 18px; height: 18px; z-index: 0; border: 2px solid #5a5a5a; border-radius: 1px; margin-top: 2px; transition: .2s;
+}
+[type="checkbox"]:not(.filled-in)+label:after {
+border: 0; -webkit-transform: scale(0); transform: scale(0);
+}
+[type="checkbox"]:not(:checked):disabled+label:before {
+border: none; background-color: rgba(0,0,0,0.26);
+}
+[type="checkbox"].tabbed:focus+label:after {
+-webkit-transform: scale(1); transform: scale(1); border: 0; border-radius: 50%; box-shadow: 0 0 0 10px rgba(0,0,0,0.1); background-color: rgba(0,0,0,0.1);
+}
+[type="checkbox"]:checked+label:before {
+top: -4px; left: -5px; width: 12px; height: 22px; border-top: 2px solid transparent; border-left: 2px solid transparent; border-right: 2px solid #26a69a; border-bottom: 2px solid #26a69a; -webkit-transform: rotate(40deg); transform: rotate(40deg); -webkit-backface-visibility: hidden; backface-visibility: hidden; -webkit-transform-origin: 100% 100%; transform-origin: 100% 100%;
+}
+[type="checkbox"]:checked:disabled+label:before {
+border-right: 2px solid rgba(0,0,0,0.26); border-bottom: 2px solid rgba(0,0,0,0.26);
+}
+[type="checkbox"]:indeterminate+label:before {
+top: -11px; left: -12px; width: 10px; height: 22px; border-top: none; border-left: none; border-right: 2px solid #26a69a; border-bottom: none; -webkit-transform: rotate(90deg); transform: rotate(90deg); -webkit-backface-visibility: hidden; backface-visibility: hidden; -webkit-transform-origin: 100% 100%; transform-origin: 100% 100%;
+}
+[type="checkbox"]:indeterminate:disabled+label:before {
+border-right: 2px solid rgba(0,0,0,0.26); background-color: transparent;
+}
+[type="checkbox"].filled-in+label:after {
+border-radius: 2px;
+}
+[type="checkbox"].filled-in+label:before {
+content: ''; left: 0; position: absolute; transition: border .25s, background-color .25s, width .20s .1s, height .20s .1s, top .20s .1s, left .20s .1s; z-index: 1;
+}
+[type="checkbox"].filled-in+label:after {
+content: ''; left: 0; position: absolute; transition: border .25s, background-color .25s, width .20s .1s, height .20s .1s, top .20s .1s, left .20s .1s; z-index: 1;
+}
+[type="checkbox"].filled-in:not(:checked)+label:before {
+width: 0; height: 0; border: 3px solid transparent; left: 6px; top: 10px; -webkit-transform: rotateZ(37deg); transform: rotateZ(37deg); -webkit-transform-origin: 20% 40%; transform-origin: 100% 100%;
+}
+[type="checkbox"].filled-in:not(:checked)+label:after {
+height: 20px; width: 20px; background-color: transparent; border: 2px solid #5a5a5a; top: 0px; z-index: 0;
+}
+[type="checkbox"].filled-in:checked+label:before {
+top: 0; left: 1px; width: 8px; height: 13px; border-top: 2px solid transparent; border-left: 2px solid transparent; border-right: 2px solid #fff; border-bottom: 2px solid #fff; -webkit-transform: rotateZ(37deg); transform: rotateZ(37deg); -webkit-transform-origin: 100% 100%; transform-origin: 100% 100%;
+}
+[type="checkbox"].filled-in:checked+label:after {
+top: 0; width: 20px; height: 20px; border: 2px solid #26a69a; background-color: #26a69a; z-index: 0;
+}
+[type="checkbox"].filled-in.tabbed:focus+label:after {
+border-radius: 2px; border-color: #5a5a5a; background-color: rgba(0,0,0,0.1);
+}
+[type="checkbox"].filled-in.tabbed:checked:focus+label:after {
+border-radius: 2px; background-color: #26a69a; border-color: #26a69a;
+}
+[type="checkbox"].filled-in:disabled:not(:checked)+label:before {
+background-color: transparent; border: 2px solid transparent;
+}
+[type="checkbox"].filled-in:disabled:not(:checked)+label:after {
+border-color: transparent; background-color: #BDBDBD;
+}
+[type="checkbox"].filled-in:disabled:checked+label:before {
+background-color: transparent;
+}
+[type="checkbox"].filled-in:disabled:checked+label:after {
+background-color: #BDBDBD; border-color: #BDBDBD;
+}
+.switch label input[type=checkbox]:checked+.lever:after {
+background-color: #26a69a; left: 24px;
+}
+.switch label .lever:after {
+content: ""; position: absolute; display: inline-block; width: 21px; height: 21px; background-color: #F1F1F1; border-radius: 21px; box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4); left: -5px; top: -3px; transition: left 0.3s ease, background .3s ease, box-shadow 0.1s ease;
+}
+input[type=checkbox]:checked:not(:disabled) ~ .lever:active::after {
+box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4),0 0 0 15px rgba(38,166,154,0.1);
+}
+input[type=checkbox]:checked:not(:disabled).tabbed:focus ~ .lever::after {
+box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4),0 0 0 15px rgba(38,166,154,0.1);
+}
+input[type=checkbox]:not(:disabled) ~ .lever:active:after {
+box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4),0 0 0 15px rgba(0,0,0,0.08);
+}
+input[type=checkbox]:not(:disabled).tabbed:focus ~ .lever::after {
+box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4),0 0 0 15px rgba(0,0,0,0.08);
+}
+.switch label input[type=checkbox][disabled]+.lever:after {
+background-color: #BDBDBD;
+}
+.switch label input[type=checkbox][disabled]:checked+.lever:after {
+background-color: #BDBDBD;
+}
+input[type=range]:focus {
+outline: none;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+background: #ccc;
+}
+input[type=range]:focus::-moz-range-track {
+background: #ccc;
+}
+input[type=range]:focus::-ms-fill-lower {
+background: #888;
+}
+input[type=range]:focus::-ms-fill-upper {
+background: #ccc;
+}
+.table-of-contents a:hover {
+color: #a8a8a8; padding-left: 19px; border-left: 1px solid #ee6e73;
+}
+.side-nav li>a:hover {
+background-color: rgba(0,0,0,0.05);
+}
+.side-nav li>a.btn:hover {
+background-color: #2bbbad;
+}
+.side-nav li>a.btn-large:hover {
+background-color: #2bbbad;
+}
+.side-nav li>a.btn-large:hover {
+background-color: #2bbbad;
+}
+.side-nav li>a.btn-floating:hover {
+background-color: #26a69a;
+}
+.side-nav .subheader:hover {
+background-color: transparent;
+}
+.side-nav .userView>a:hover {
+background-color: transparent;
+}
+@-webkit-keyframes container-rotate {
+
+}
+@keyframes container-rotate {
+
+}
+@-webkit-keyframes fill-unfill-rotate {
+
+}
+@keyframes fill-unfill-rotate {
+
+}
+@-webkit-keyframes blue-fade-in-out {
+
+}
+@keyframes blue-fade-in-out {
+
+}
+@-webkit-keyframes red-fade-in-out {
+
+}
+@keyframes red-fade-in-out {
+
+}
+@-webkit-keyframes yellow-fade-in-out {
+
+}
+@keyframes yellow-fade-in-out {
+
+}
+@-webkit-keyframes green-fade-in-out {
+
+}
+@keyframes green-fade-in-out {
+
+}
+@-webkit-keyframes left-spin {
+
+}
+@keyframes left-spin {
+
+}
+@-webkit-keyframes right-spin {
+
+}
+@keyframes right-spin {
+
+}
+@-webkit-keyframes fade-out {
+
+}
+@keyframes fade-out {
+
+}
+.tap-target-wrapper.open .tap-target-wave::before {
+-webkit-transform: scale(1); transform: scale(1);
+}
+.tap-target-wrapper.open .tap-target-wave::after {
+visibility: visible; -webkit-animation: pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) infinite; animation: pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) infinite; transition: opacity .3s, transform .3s, visibility 0s 1s, -webkit-transform .3s;
+}
+.tap-target-wave::before {
+content: ''; display: block; position: absolute; width: 100%; height: 100%; border-radius: 50%; background-color: #ffffff;
+}
+.tap-target-wave::after {
+content: ''; display: block; position: absolute; width: 100%; height: 100%; border-radius: 50%; background-color: #ffffff;
+}
+.tap-target-wave::before {
+-webkit-transform: scale(0); transform: scale(0); transition: transform .3s, -webkit-transform .3s;
+}
+.tap-target-wave::after {
+visibility: hidden; transition: opacity .3s, transform .3s, visibility 0s, -webkit-transform .3s; z-index: -1;
+}
+.tap-target-origin:not(.btn):not(.btn-large):hover {
+background: none;
+}
+.pulse::before {
+content: ''; display: block; position: absolute; width: 100%; height: 100%; top: 0; left: 0; background-color: inherit; border-radius: inherit; transition: opacity .3s, transform .3s, -webkit-transform .3s; -webkit-animation: pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) infinite; animation: pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) infinite; z-index: -1;
+}
+@-webkit-keyframes pulse-animation {
+
+}
+@keyframes pulse-animation {
+
+}
+.picker__select--month:focus {
+border-color: rgba(0,0,0,0.05);
+}
+.picker__select--year:focus {
+border-color: rgba(0,0,0,0.05);
+}
+.picker__nav--disabled:hover {
+cursor: default; background: none; border-right-color: #f5f5f5; border-left-color: #f5f5f5;
+}
+.picker__nav--disabled:before {
+cursor: default; background: none; border-right-color: #f5f5f5; border-left-color: #f5f5f5;
+}
+.picker__nav--disabled:before:hover {
+cursor: default; background: none; border-right-color: #f5f5f5; border-left-color: #f5f5f5;
+}
+.picker__day--disabled:before {
+border-top-color: #aaaaaa;
+}
+.picker__day--infocus:hover {
+cursor: pointer; color: #000; font-weight: 500;
+}
+.picker__day--outfocus:hover {
+cursor: pointer; color: #dddddd; font-weight: 500;
+}
+.picker__day--highlighted:hover {
+cursor: pointer;
+}
+.picker__day--selected:hover {
+border-radius: 50%; -webkit-transform: scale(0.75); transform: scale(0.75); background: #0089ec; color: #ffffff;
+}
+.picker__day--disabled:hover {
+background: #f5f5f5; border-color: #f5f5f5; color: #dddddd; cursor: default;
+}
+.picker__day--highlighted.picker__day--disabled:hover {
+background: #bbbbbb;
+}
+.picker__button--today:hover {
+cursor: pointer; color: #000000; background: #b1dcfb; border-bottom-color: #b1dcfb;
+}
+.picker__button--clear:hover {
+cursor: pointer; color: #000000; background: #b1dcfb; border-bottom-color: #b1dcfb;
+}
+.picker__button--close:hover {
+cursor: pointer; color: #000000; background: #b1dcfb; border-bottom-color: #b1dcfb;
+}
+.picker__button--today:focus {
+background: #b1dcfb; border-color: rgba(0,0,0,0.05); outline: none;
+}
+.picker__button--clear:focus {
+background: #b1dcfb; border-color: rgba(0,0,0,0.05); outline: none;
+}
+.picker__button--close:focus {
+background: #b1dcfb; border-color: rgba(0,0,0,0.05); outline: none;
+}
+.picker__button--today:before {
+position: relative; display: inline-block; height: 0;
+}
+.picker__button--clear:before {
+position: relative; display: inline-block; height: 0;
+}
+.picker__button--close:before {
+position: relative; display: inline-block; height: 0;
+}
+.picker__button--today:before {
+content: " "; margin-right: .45em;
+}
+.picker__button--clear:before {
+content: " "; margin-right: .45em;
+}
+.picker__button--today:before {
+top: -0.05em; width: 0; border-top: 0.66em solid #0059bc; border-left: .66em solid transparent;
+}
+.picker__button--clear:before {
+top: -0.25em; width: .66em; border-top: 3px solid #ee2200;
+}
+.picker__button--close:before {
+content: "\D7"; top: -0.1em; vertical-align: top; font-size: 1.1em; margin-right: .35em; color: #777777;
+}
+.picker__button--today[disabled]:hover {
+background: #f5f5f5; border-color: #f5f5f5; color: #dddddd; cursor: default;
+}
+.picker__button--today[disabled]:before {
+border-top-color: #aaaaaa;
+}
+.picker__nav--prev:hover {
+cursor: pointer; color: #000000; background: #a1ded8;
+}
+.picker__nav--next:hover {
+cursor: pointer; color: #000000; background: #a1ded8;
+}
+.picker__day--selected:hover {
+border-radius: 50%; -webkit-transform: scale(0.9); transform: scale(0.9); background-color: #26a69a; color: #ffffff;
+}
+.picker__day--selected:hover.picker__day--outfocus {
+background-color: #a1ded8;
+}
+.picker__nav--prev:before {
+content: " "; border-top: .5em solid transparent; border-bottom: .5em solid transparent; border-right: 0.75em solid #676767; width: 0; height: 0; display: block; margin: 0 auto;
+}
+.picker__nav--next:before {
+content: " "; border-top: .5em solid transparent; border-bottom: .5em solid transparent; border-right: 0.75em solid #676767; width: 0; height: 0; display: block; margin: 0 auto;
+}
+.picker__nav--next:before {
+border-right: 0; border-left: 0.75em solid #676767;
+}
+button.picker__today:focus {
+background-color: #a1ded8;
+}
+button.picker__clear:focus {
+background-color: #a1ded8;
+}
+button.picker__close:focus {
+background-color: #a1ded8;
+}
+.picker__list-item:hover {
+cursor: pointer; color: #000000; background: #b1dcfb; border-color: #0089ec; z-index: 10;
+}
+.picker__list-item--highlighted:hover {
+cursor: pointer; color: #000000; background: #b1dcfb;
+}
+.picker__list-item--selected:hover {
+background: #0089ec; color: #ffffff; z-index: 10;
+}
+.picker__list-item--disabled:hover {
+background: #f5f5f5; color: #dddddd; cursor: default; border-color: #dddddd; z-index: auto;
+}
+.picker--time .picker__button--clear:hover {
+background: #ee2200; border-color: #ee2200; cursor: pointer; color: #ffffff; outline: none;
+}
+.picker--time .picker__button--clear:focus {
+background: #ee2200; border-color: #ee2200; cursor: pointer; color: #ffffff; outline: none;
+}
+.picker--time .picker__button--clear:before {
+top: -0.25em; color: #666; font-size: 1.25em; font-weight: bold;
+}
+.picker--time .picker__button--clear:hover:before {
+color: #ffffff;
+}
+.picker--time .picker__button--clear:focus:before {
+color: #ffffff;
+}
+body {
+background-color: #fcfcfc;
+}
+nav ul li a:hover {
+background-color: #ea454b;
+}
+ul.side-nav.fixed li.logo:hover {
+background-color: transparent;
+}
+ul.side-nav.fixed li.logo #logo-container:hover {
+background-color: transparent;
+}
+ul.side-nav.fixed:hover {
+overflow-y: auto;
+}
+#github-button:hover {
+background-color: #797777;
+}
+#download-button:hover {
+background-color: #f5a5a8;
+}
+#front-page-nav li:hover {
+background-color: #fdeaeb;
+}
+pre[class*="language-"]:before {
+position: absolute; padding: 1px 5px; background: #e8e6e3; top: 0; left: 0; font-family: "Roboto", sans-serif; -webkit-font-smoothing: antialiased; color: #555; content: attr(class); font-size: .9rem; border: solid 1px rgba(51,51,51,0.12); border-top: none; border-left: none;
+}
+.buysellads.buysellads-demo a.close:hover {
+background-color: #ddd;
+}
+body.parallax-demo footer {
+margin-top: 0;
+}
+#tx-live-lang-container #tx-live-lang-picker li:hover {
+color: inherit; background-color: #fdeaeb;
+}
+#nav-mobile li.search:hover {
+background-color: #fff;
+}
+#nav-mobile li.search .search-wrapper input#search:focus {
+outline: none; box-shadow: none;
+}
+#nav-mobile li.search .search-results a:hover {
+background-color: #eee; outline: none;
+}
+body.themes .themes-section {
+padding: 60px 0 40px 0;
+}
+body.themes .themes-section .theme-preview {
+width: 100%;
+}
+body.themes .themes-section h4 {
+margin-top: 0;
+}
+body.themes .themes-section .badge.new {
+font-weight: 400; float: none; display: inline-block; -webkit-transform: translateY(-6px); transform: translateY(-6px);
+}
+.shopify-btn:hover {
+background-color: #5f9d3e;
+}
+@font-face {
+font-family: 'Inconsolata'; font-style: normal; font-weight: 400; src: local('Inconsolata Regular'), local('Inconsolata-Regular'), url('http://fonts.gstatic.com/s/inconsolata/v15/BjAYBlHtW3CJxDcjzrnZCJ0EAVxt0G0biEntp43Qt6E.ttf') format('truetype');
+}
+@font-face {
+font-family: 'Material Icons'; font-style: normal; font-weight: 400; src: local('Material Icons'), local('MaterialIcons-Regular'), url('http://fonts.gstatic.com/s/materialicons/v22/2fcrYFNaTjcS6g4U3t-Y5StnKWgpfO2iSkLzTz-AABg.ttf') format('truetype');
+}
+@media only screen and (max-width: 992px) {
+  .pagination {
+    width: 100%;
+  }
+  .pagination li.prev {
+    width: 10%;
+  }
+  .pagination li.next {
+    width: 10%;
+  }
+  .pagination li.pages {
+    width: 80%; overflow: hidden; white-space: nowrap;
+  }
+  .hide-on-med-and-down {
+    display: none !important;
+  }
+  .show-on-medium-and-down {
+    display: block !important;
+  }
+  table.responsive-table {
+    width: 100%; border-collapse: collapse; border-spacing: 0; display: block; position: relative;
+  }
+  table.responsive-table td:empty:before {
+    content: '\00a0';
+  }
+  table.responsive-table th {
+    margin: 0; vertical-align: top;
+  }
+  table.responsive-table td {
+    margin: 0; vertical-align: top;
+  }
+  table.responsive-table th {
+    text-align: left;
+  }
+  table.responsive-table thead {
+    display: block; float: left;
+  }
+  table.responsive-table thead tr {
+    display: block; padding: 0 10px 0 0;
+  }
+  table.responsive-table thead tr th::before {
+    content: "\00a0";
+  }
+  table.responsive-table tbody {
+    display: block; width: auto; position: relative; overflow-x: auto; white-space: nowrap;
+  }
+  table.responsive-table tbody tr {
+    display: inline-block; vertical-align: top;
+  }
+  table.responsive-table th {
+    display: block; text-align: right;
+  }
+  table.responsive-table td {
+    display: block; min-height: 1.25em; text-align: left;
+  }
+  table.responsive-table tr {
+    padding: 0 10px;
+  }
+  table.responsive-table thead {
+    border: 0; border-right: 1px solid #d0d0d0;
+  }
+  table.responsive-table.bordered th {
+    border-bottom: 0; border-left: 0;
+  }
+  table.responsive-table.bordered td {
+    border-left: 0; border-right: 0; border-bottom: 0;
+  }
+  table.responsive-table.bordered tr {
+    border: 0;
+  }
+  table.responsive-table.bordered tbody tr {
+    border-right: 1px solid #d0d0d0;
+  }
+  nav .brand-logo {
+    left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%);
+  }
+  nav .brand-logo.left {
+    padding: 0; -webkit-transform: none; transform: none;
+  }
+  nav .brand-logo.right {
+    padding: 0; -webkit-transform: none; transform: none;
+  }
+  nav .brand-logo.left {
+    left: 0.5rem;
+  }
+  nav .brand-logo.right {
+    right: 0.5rem; left: auto;
+  }
+  .tabs {
+    display: flex;
+  }
+  .tabs .tab {
+    -webkit-flex-grow: 1; -ms-flex-positive: 1; flex-grow: 1;
+  }
+  .tabs .tab a {
+    padding: 0 12px;
+  }
+  .modal {
+    width: 80%;
+  }
+  .input-field .prefix ~ input {
+    width: calc(100% - 3rem);
+  }
+  .side-nav.fixed {
+    -webkit-transform: translateX(-105%); transform: translateX(-105%);
+  }
+  .side-nav.fixed.right-aligned {
+    -webkit-transform: translateX(105%); transform: translateX(105%);
+  }
+  .side-nav a {
+    padding: 0 16px;
+  }
+  .side-nav .userView {
+    padding: 16px 16px 0;
+  }
+  header {
+    padding-left: 0;
+  }
+  main {
+    padding-left: 0;
+  }
+  footer {
+    padding-left: 0;
+  }
+  h5>span {
+    display: block; margin: 0 0 15px 0;
+  }
+  nav .nav-wrapper {
+    text-align: center;
+  }
+  nav .nav-wrapper a.page-title {
+    font-size: 36px;
+  }
+  #front-page-nav ul.side-nav li {
+    float: none; padding: 0 15px;
+  }
+  #front-page-nav ul.side-nav li:hover {
+    background-color: #ddd;
+  }
+  #front-page-nav ul.side-nav li .active {
+    background-color: transparent;
+  }
+  #front-page-nav ul.side-nav a {
+    color: #444;
+  }
+  #index-banner h1 {
+    margin-top: 60px;
+  }
+  #index-banner h4 {
+    margin-bottom: 15px;
+  }
+  .github-commit {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .hide-on-small-only {
+    display: none !important;
+  }
+  .tabs-wrapper {
+    display: none !important;
+  }
+  .hide-on-small-and-down {
+    display: none !important;
+  }
+  .show-on-small {
+    display: block !important;
+  }
+  .center-on-small-only {
+    text-align: center;
+  }
+  #toast-container {
+    min-width: 100%; bottom: 0%;
+  }
+  .toast {
+    width: 100%; border-radius: 0;
+  }
+  .input-field .prefix ~ input {
+    width: calc(100% - 3rem);
+  }
+  .tap-target {
+    width: 600px; height: 600px;
+  }
+  .tap-target-wrapper {
+    width: 600px; height: 600px;
+  }
+  a.button-collapse.top-nav {
+    left: 5%;
+  }
+  #index-banner h4 {
+    margin-bottom: 0;
+  }
+  .shadow-demo {
+    width: 150px; height: 150px;
+  }
+  .mobile-image {
+    max-width: 100%;
+  }
+}
+@media only screen and (min-width: 601px) {
+  .hide-on-med-and-up {
+    display: none !important;
+  }
+  .show-on-medium-and-up {
+    display: block !important;
+  }
+  .container {
+    width: 85%;
+  }
+  .row .col.m1 {
+    width: 8.3333333333%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.m2 {
+    width: 16.6666666667%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.m3 {
+    width: 25%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.m4 {
+    width: 33.3333333333%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.m5 {
+    width: 41.6666666667%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.m6 {
+    width: 50%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.m7 {
+    width: 58.3333333333%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.m8 {
+    width: 66.6666666667%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.m9 {
+    width: 75%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.m10 {
+    width: 83.3333333333%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.m11 {
+    width: 91.6666666667%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.m12 {
+    width: 100%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.offset-m1 {
+    margin-left: 8.3333333333%;
+  }
+  .row .col.pull-m1 {
+    right: 8.3333333333%;
+  }
+  .row .col.push-m1 {
+    left: 8.3333333333%;
+  }
+  .row .col.offset-m2 {
+    margin-left: 16.6666666667%;
+  }
+  .row .col.pull-m2 {
+    right: 16.6666666667%;
+  }
+  .row .col.push-m2 {
+    left: 16.6666666667%;
+  }
+  .row .col.offset-m3 {
+    margin-left: 25%;
+  }
+  .row .col.pull-m3 {
+    right: 25%;
+  }
+  .row .col.push-m3 {
+    left: 25%;
+  }
+  .row .col.offset-m4 {
+    margin-left: 33.3333333333%;
+  }
+  .row .col.pull-m4 {
+    right: 33.3333333333%;
+  }
+  .row .col.push-m4 {
+    left: 33.3333333333%;
+  }
+  .row .col.offset-m5 {
+    margin-left: 41.6666666667%;
+  }
+  .row .col.pull-m5 {
+    right: 41.6666666667%;
+  }
+  .row .col.push-m5 {
+    left: 41.6666666667%;
+  }
+  .row .col.offset-m6 {
+    margin-left: 50%;
+  }
+  .row .col.pull-m6 {
+    right: 50%;
+  }
+  .row .col.push-m6 {
+    left: 50%;
+  }
+  .row .col.offset-m7 {
+    margin-left: 58.3333333333%;
+  }
+  .row .col.pull-m7 {
+    right: 58.3333333333%;
+  }
+  .row .col.push-m7 {
+    left: 58.3333333333%;
+  }
+  .row .col.offset-m8 {
+    margin-left: 66.6666666667%;
+  }
+  .row .col.pull-m8 {
+    right: 66.6666666667%;
+  }
+  .row .col.push-m8 {
+    left: 66.6666666667%;
+  }
+  .row .col.offset-m9 {
+    margin-left: 75%;
+  }
+  .row .col.pull-m9 {
+    right: 75%;
+  }
+  .row .col.push-m9 {
+    left: 75%;
+  }
+  .row .col.offset-m10 {
+    margin-left: 83.3333333333%;
+  }
+  .row .col.pull-m10 {
+    right: 83.3333333333%;
+  }
+  .row .col.push-m10 {
+    left: 83.3333333333%;
+  }
+  .row .col.offset-m11 {
+    margin-left: 91.6666666667%;
+  }
+  .row .col.pull-m11 {
+    right: 91.6666666667%;
+  }
+  .row .col.push-m11 {
+    left: 91.6666666667%;
+  }
+  .row .col.offset-m12 {
+    margin-left: 100%;
+  }
+  .row .col.pull-m12 {
+    right: 100%;
+  }
+  .row .col.push-m12 {
+    left: 100%;
+  }
+  nav.nav-extended .nav-wrapper {
+    min-height: 64px;
+  }
+  nav {
+    height: 64px; line-height: 64px;
+  }
+  nav .nav-wrapper i {
+    height: 64px; line-height: 64px;
+  }
+  nav a.button-collapse {
+    height: 64px; line-height: 64px;
+  }
+  nav a.button-collapse i {
+    height: 64px; line-height: 64px;
+  }
+  .navbar-fixed {
+    height: 64px;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+  .hide-on-med-only {
+    display: none !important;
+  }
+  .show-on-medium {
+    display: block !important;
+  }
+}
+@media only screen and (min-width: 993px) {
+  .hide-on-large-only {
+    display: none !important;
+  }
+  .show-on-large {
+    display: block !important;
+  }
+  .container {
+    width: 70%;
+  }
+  .row .col.l1 {
+    width: 8.3333333333%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.l2 {
+    width: 16.6666666667%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.l3 {
+    width: 25%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.l4 {
+    width: 33.3333333333%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.l5 {
+    width: 41.6666666667%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.l6 {
+    width: 50%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.l7 {
+    width: 58.3333333333%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.l8 {
+    width: 66.6666666667%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.l9 {
+    width: 75%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.l10 {
+    width: 83.3333333333%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.l11 {
+    width: 91.6666666667%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.l12 {
+    width: 100%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.offset-l1 {
+    margin-left: 8.3333333333%;
+  }
+  .row .col.pull-l1 {
+    right: 8.3333333333%;
+  }
+  .row .col.push-l1 {
+    left: 8.3333333333%;
+  }
+  .row .col.offset-l2 {
+    margin-left: 16.6666666667%;
+  }
+  .row .col.pull-l2 {
+    right: 16.6666666667%;
+  }
+  .row .col.push-l2 {
+    left: 16.6666666667%;
+  }
+  .row .col.offset-l3 {
+    margin-left: 25%;
+  }
+  .row .col.pull-l3 {
+    right: 25%;
+  }
+  .row .col.push-l3 {
+    left: 25%;
+  }
+  .row .col.offset-l4 {
+    margin-left: 33.3333333333%;
+  }
+  .row .col.pull-l4 {
+    right: 33.3333333333%;
+  }
+  .row .col.push-l4 {
+    left: 33.3333333333%;
+  }
+  .row .col.offset-l5 {
+    margin-left: 41.6666666667%;
+  }
+  .row .col.pull-l5 {
+    right: 41.6666666667%;
+  }
+  .row .col.push-l5 {
+    left: 41.6666666667%;
+  }
+  .row .col.offset-l6 {
+    margin-left: 50%;
+  }
+  .row .col.pull-l6 {
+    right: 50%;
+  }
+  .row .col.push-l6 {
+    left: 50%;
+  }
+  .row .col.offset-l7 {
+    margin-left: 58.3333333333%;
+  }
+  .row .col.pull-l7 {
+    right: 58.3333333333%;
+  }
+  .row .col.push-l7 {
+    left: 58.3333333333%;
+  }
+  .row .col.offset-l8 {
+    margin-left: 66.6666666667%;
+  }
+  .row .col.pull-l8 {
+    right: 66.6666666667%;
+  }
+  .row .col.push-l8 {
+    left: 66.6666666667%;
+  }
+  .row .col.offset-l9 {
+    margin-left: 75%;
+  }
+  .row .col.pull-l9 {
+    right: 75%;
+  }
+  .row .col.push-l9 {
+    left: 75%;
+  }
+  .row .col.offset-l10 {
+    margin-left: 83.3333333333%;
+  }
+  .row .col.pull-l10 {
+    right: 83.3333333333%;
+  }
+  .row .col.push-l10 {
+    left: 83.3333333333%;
+  }
+  .row .col.offset-l11 {
+    margin-left: 91.6666666667%;
+  }
+  .row .col.pull-l11 {
+    right: 91.6666666667%;
+  }
+  .row .col.push-l11 {
+    left: 91.6666666667%;
+  }
+  .row .col.offset-l12 {
+    margin-left: 100%;
+  }
+  .row .col.pull-l12 {
+    right: 100%;
+  }
+  .row .col.push-l12 {
+    left: 100%;
+  }
+  nav a.button-collapse {
+    display: none;
+  }
+  #toast-container {
+    top: 10%; right: 7%; max-width: 86%;
+  }
+  .toast {
+    float: right;
+  }
+  .container {
+    width: 85%;
+  }
+}
+@media only screen and (min-width: 1201px) {
+  .row .col.xl1 {
+    width: 8.3333333333%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.xl2 {
+    width: 16.6666666667%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.xl3 {
+    width: 25%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.xl4 {
+    width: 33.3333333333%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.xl5 {
+    width: 41.6666666667%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.xl6 {
+    width: 50%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.xl7 {
+    width: 58.3333333333%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.xl8 {
+    width: 66.6666666667%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.xl9 {
+    width: 75%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.xl10 {
+    width: 83.3333333333%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.xl11 {
+    width: 91.6666666667%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.xl12 {
+    width: 100%; margin-left: auto; left: auto; right: auto;
+  }
+  .row .col.offset-xl1 {
+    margin-left: 8.3333333333%;
+  }
+  .row .col.pull-xl1 {
+    right: 8.3333333333%;
+  }
+  .row .col.push-xl1 {
+    left: 8.3333333333%;
+  }
+  .row .col.offset-xl2 {
+    margin-left: 16.6666666667%;
+  }
+  .row .col.pull-xl2 {
+    right: 16.6666666667%;
+  }
+  .row .col.push-xl2 {
+    left: 16.6666666667%;
+  }
+  .row .col.offset-xl3 {
+    margin-left: 25%;
+  }
+  .row .col.pull-xl3 {
+    right: 25%;
+  }
+  .row .col.push-xl3 {
+    left: 25%;
+  }
+  .row .col.offset-xl4 {
+    margin-left: 33.3333333333%;
+  }
+  .row .col.pull-xl4 {
+    right: 33.3333333333%;
+  }
+  .row .col.push-xl4 {
+    left: 33.3333333333%;
+  }
+  .row .col.offset-xl5 {
+    margin-left: 41.6666666667%;
+  }
+  .row .col.pull-xl5 {
+    right: 41.6666666667%;
+  }
+  .row .col.push-xl5 {
+    left: 41.6666666667%;
+  }
+  .row .col.offset-xl6 {
+    margin-left: 50%;
+  }
+  .row .col.pull-xl6 {
+    right: 50%;
+  }
+  .row .col.push-xl6 {
+    left: 50%;
+  }
+  .row .col.offset-xl7 {
+    margin-left: 58.3333333333%;
+  }
+  .row .col.pull-xl7 {
+    right: 58.3333333333%;
+  }
+  .row .col.push-xl7 {
+    left: 58.3333333333%;
+  }
+  .row .col.offset-xl8 {
+    margin-left: 66.6666666667%;
+  }
+  .row .col.pull-xl8 {
+    right: 66.6666666667%;
+  }
+  .row .col.push-xl8 {
+    left: 66.6666666667%;
+  }
+  .row .col.offset-xl9 {
+    margin-left: 75%;
+  }
+  .row .col.pull-xl9 {
+    right: 75%;
+  }
+  .row .col.push-xl9 {
+    left: 75%;
+  }
+  .row .col.offset-xl10 {
+    margin-left: 83.3333333333%;
+  }
+  .row .col.pull-xl10 {
+    right: 83.3333333333%;
+  }
+  .row .col.push-xl10 {
+    left: 83.3333333333%;
+  }
+  .row .col.offset-xl11 {
+    margin-left: 91.6666666667%;
+  }
+  .row .col.pull-xl11 {
+    right: 91.6666666667%;
+  }
+  .row .col.push-xl11 {
+    left: 91.6666666667%;
+  }
+  .row .col.offset-xl12 {
+    margin-left: 100%;
+  }
+  .row .col.pull-xl12 {
+    right: 100%;
+  }
+  .row .col.push-xl12 {
+    left: 100%;
+  }
+}
+@media only screen and (min-width: 0) {
+  html {
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  html {
+    font-size: 14.5px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  html {
+    font-size: 15px;
+  }
+}
+@media only screen and (min-width: 360px) {
+  .flow-text {
+    font-size: 1.2rem;
+  }
+}
+@media only screen and (min-width: 390px) {
+  .flow-text {
+    font-size: 1.224rem;
+  }
+}
+@media only screen and (min-width: 420px) {
+  .flow-text {
+    font-size: 1.248rem;
+  }
+}
+@media only screen and (min-width: 450px) {
+  .flow-text {
+    font-size: 1.272rem;
+  }
+}
+@media only screen and (min-width: 480px) {
+  .flow-text {
+    font-size: 1.296rem;
+  }
+}
+@media only screen and (min-width: 510px) {
+  .flow-text {
+    font-size: 1.32rem;
+  }
+}
+@media only screen and (min-width: 540px) {
+  .flow-text {
+    font-size: 1.344rem;
+  }
+}
+@media only screen and (min-width: 570px) {
+  .flow-text {
+    font-size: 1.368rem;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .flow-text {
+    font-size: 1.392rem;
+  }
+}
+@media only screen and (min-width: 630px) {
+  .flow-text {
+    font-size: 1.416rem;
+  }
+}
+@media only screen and (min-width: 660px) {
+  .flow-text {
+    font-size: 1.44rem;
+  }
+}
+@media only screen and (min-width: 690px) {
+  .flow-text {
+    font-size: 1.464rem;
+  }
+}
+@media only screen and (min-width: 720px) {
+  .flow-text {
+    font-size: 1.488rem;
+  }
+}
+@media only screen and (min-width: 750px) {
+  .flow-text {
+    font-size: 1.512rem;
+  }
+}
+@media only screen and (min-width: 780px) {
+  .flow-text {
+    font-size: 1.536rem;
+  }
+}
+@media only screen and (min-width: 810px) {
+  .flow-text {
+    font-size: 1.56rem;
+  }
+}
+@media only screen and (min-width: 840px) {
+  .flow-text {
+    font-size: 1.584rem;
+  }
+}
+@media only screen and (min-width: 870px) {
+  .flow-text {
+    font-size: 1.608rem;
+  }
+}
+@media only screen and (min-width: 900px) {
+  .flow-text {
+    font-size: 1.632rem;
+  }
+}
+@media only screen and (min-width: 930px) {
+  .flow-text {
+    font-size: 1.656rem;
+  }
+}
+@media only screen and (min-width: 960px) {
+  .flow-text {
+    font-size: 1.68rem;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .flow-text {
+    font-size: 1.2rem;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+  #toast-container {
+    left: 5%; bottom: 7%; max-width: 90%;
+  }
+  .toast {
+    float: left;
+  }
+}
+@media (min-height: 28.875em) {
+  .picker__frame {
+    overflow: visible; top: auto; bottom: -100%; max-height: 80%;
+  }
+  .picker__wrap {
+    display: block;
+  }
+  .picker__box {
+    display: block; border: 1px solid #777777; border-top-color: #898989; border-bottom-width: 0; border-radius: 5px 5px 0 0; box-shadow: 0 12px 36px 16px rgba(0,0,0,0.24);
+  }
+}
+@media (min-height: 40.125em) {
+  .picker__frame {
+    margin-bottom: 7.5%;
+  }
+  .picker--time .picker__box {
+    margin-bottom: 5em;
+  }
+}
+@media (min-height: 35.875em) {
+  .picker--opened .picker__frame {
+    top: 10%; bottom: auto;
+  }
+}
+@media (min-height: 38.875em) {
+  .picker--opened .picker__frame {
+    top: 10%; bottom: auto;
+  }
+}
+@media (min-height: 33.875em) {
+  .picker__weekday {
+    padding-bottom: .5em;
+  }
+}
+@media (min-height: 46.75em) {
+  .picker__list-item {
+    padding: .5em 1em;
+  }
+}
+</style>
+</head>
+  <body style="box-sizing: inherit; margin: 0;" bgcolor="#fcfcfc">
+    <header style="display: block; box-sizing: inherit; padding-left: 300px;">
+      <div class="container" style="box-sizing: inherit; max-width: 1280px; width: 90%; margin: 0 auto;"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav waves-effect waves-light circle hide-on-large-only" style="background-color: transparent; box-sizing: inherit; color: #fff; text-decoration: none; -webkit-tap-highlight-color: transparent; border-radius: 50%; position: absolute; cursor: pointer; display: inline-block; overflow: hidden; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; vertical-align: middle; z-index: 2; transition: .3s ease-out; text-align: center; height: 48px; width: 48px; left: 7.5%; top: 0; float: none; margin-left: 1.5rem; font-size: 36px;"><i class="material-icons" style="box-sizing: inherit; line-height: 1; text-rendering: optimizeLegibility; -webkit-font-feature-settings: 'liga'; -moz-font-feature-settings: 'liga'; font-feature-settings: 'liga'; font-size: 32px; font-family: 'Material Icons'; font-weight: normal; font-style: normal; letter-spacing: normal; text-transform: none; display: inline-block; white-space: nowrap; word-wrap: normal; direction: ltr;">menu</i></a></div>
+      <ul id="nav-mobile" class="side-nav fixed" style="box-sizing: inherit; margin: 0; padding-left: 0; list-style-type: none; box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2); position: fixed; width: 300px; left: 0; top: 0; height: -moz-calc(100%); padding-bottom: 60px; background-color: #fff; z-index: 999; overflow-y: auto; will-change: transform; -webkit-backface-visibility: hidden; backface-visibility: hidden; -webkit-transform: translateX(0); transform: translateX(0); overflow: hidden;">
+        <li class="logo" style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; text-align: center; margin-top: 32px; margin-bottom: 80px;"><a id="logo-container" href="http://materializecss.com/" class="brand-logo" style="background-color: transparent; padding: 0 30px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 500; height: 57px; line-height: 44px; margin-bottom: 32px;">
+            <object id="front-page-logo" type="image/svg+xml" data="res/materialize.svg" style="box-sizing: inherit; display: inline-block; height: 100%; pointer-events: none;">Your browser does not support SVG</object></a></li>
+        <li class="search" style="box-sizing: inherit; padding: 1px 0 0; list-style-type: none; float: none; line-height: 44px; position: absolute; left: 0; right: 0; top: 120px; margin-top: 1px; z-index: 2;">
+          <div class="search-wrapper card" style="box-sizing: inherit; box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2); position: relative; background-color: #fff; margin: 0 12px; transition: margin .25s ease; border-radius: 2px;">
+            <input id="search" style="color: inherit; margin: 0; padding: 0 45px 0 15px; border-style: none none solid; border-width: 0; line-height: normal; font-style: normal; font-variant: normal; font-weight: 300; font-size: 16px; box-sizing: content-box; background-color: transparent; border-bottom-color: #9e9e9e; border-radius: 0; outline: none; height: 45px; width: 100%; box-shadow: none; transition: all 0.3s; display: block;"><i class="material-icons" style="box-sizing: inherit; line-height: 1; text-rendering: optimizeLegibility; -webkit-font-feature-settings: 'liga'; -moz-font-feature-settings: 'liga'; font-feature-settings: 'liga'; position: absolute; top: 10px; right: 10px; cursor: pointer; font-family: 'Material Icons'; font-weight: normal; font-style: normal; font-size: 24px; letter-spacing: normal; text-transform: none; display: inline-block; white-space: nowrap; word-wrap: normal; direction: ltr;">search</i>
+            <div class="search-results" style="box-sizing: inherit; border-top-width: 1px; border-top-color: #e9e9e9; border-top-style: solid; background-color: #fff; margin: 0;"></div>
+          </div>
+        </li>
+        <li class="bold" style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px;"><a href="http://materializecss.com/about.html" class="waves-effect waves-teal" style="background-color: transparent; padding: 0 30px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; position: relative; cursor: pointer; display: block; overflow: hidden; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; vertical-align: middle; z-index: 1; transition: .3s ease-out; font-size: 13px; font-weight: 500; height: 44px; line-height: 44px;">About</a></li>
+        <li class="bold" style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px;"><a href="http://materializecss.com/getting-started.html" class="waves-effect waves-teal" style="background-color: transparent; padding: 0 30px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; position: relative; cursor: pointer; display: block; overflow: hidden; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; vertical-align: middle; z-index: 1; transition: .3s ease-out; font-size: 13px; font-weight: 500; height: 44px; line-height: 44px;">Getting Started</a></li>
+        <li class="no-padding" style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;">
+          <ul class="collapsible collapsible-accordion" style="box-sizing: inherit; margin: 0; border: none; padding-left: 0; list-style-type: none; box-shadow: none; border-top-width: 1px; border-top-color: #ddd; border-right-width: 1px; border-right-color: #ddd; border-left-width: 1px; border-left-color: #ddd; background-color: #FFF;">
+            <li class="bold" style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;">
+<a class="collapsible-header  waves-effect waves-teal" style="background-color: transparent; padding: 0 30px; border: none; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; position: relative; cursor: pointer; display: block; overflow: hidden; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; vertical-align: middle; z-index: 1; transition: .3s ease-out; min-height: 3rem; line-height: inherit; border-bottom-width: 1px; border-bottom-color: #ddd; height: inherit; font-size: 13px; font-weight: 500;">CSS</a>
+              <div class="collapsible-body" style="box-sizing: border-box; display: none; border-bottom-color: #ddd; border-bottom-style: solid; border: 0; padding: 0; background-color: #fff;">
+                <ul style="box-sizing: inherit; padding-left: 0; list-style-type: none;">
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/color.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">Color</a></li>
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/grid.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">Grid</a></li>
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/helpers.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">Helpers</a></li>
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/media-css.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">Media</a></li>
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/pulse.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">Pulse</a></li>
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/sass.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">Sass</a></li>
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/shadow.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">Shadow</a></li>
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/table.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">Table</a></li>
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/css-transitions.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">Transitions</a></li>
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/typography.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">Typography</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="bold" style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;">
+<a class="collapsible-header  waves-effect waves-teal" style="background-color: transparent; padding: 0 30px; border: none; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; position: relative; cursor: pointer; display: block; overflow: hidden; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; vertical-align: middle; z-index: 1; transition: .3s ease-out; min-height: 3rem; line-height: inherit; border-bottom-width: 1px; border-bottom-color: #ddd; height: inherit; font-size: 13px; font-weight: 500;">Components</a>
+              <div class="collapsible-body" style="box-sizing: border-box; display: none; border-bottom-color: #ddd; border-bottom-style: solid; border: 0; padding: 0; background-color: #fff;">
+                <ul style="box-sizing: inherit; padding-left: 0; list-style-type: none;">
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/badges.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">Badges</a></li>
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/buttons.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">Buttons</a></li>
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/breadcrumbs.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">Breadcrumbs</a></li>
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/cards.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">Cards</a></li>
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/chips.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">Chips</a></li>
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/collections.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">Collections</a></li>
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/footer.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">Footer</a></li>
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/forms.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">Forms</a></li>
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/icons.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">Icons</a></li>
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/navbar.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">Navbar</a></li>
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/pagination.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">Pagination</a></li>
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/preloader.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">Preloader</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="bold" style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;">
+<a class="collapsible-header  waves-effect waves-teal" style="background-color: transparent; padding: 0 30px; border: none; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; position: relative; cursor: pointer; display: block; overflow: hidden; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; vertical-align: middle; z-index: 1; transition: .3s ease-out; min-height: 3rem; line-height: inherit; border-bottom-width: 1px; border-bottom-color: #ddd; height: inherit; font-size: 13px; font-weight: 500;">JavaScript</a>
+              <div class="collapsible-body" style="box-sizing: border-box; display: none; border-bottom-color: #ddd; border-bottom-style: solid; border: 0; padding: 0; background-color: #fff;">
+                <ul style="box-sizing: inherit; padding-left: 0; list-style-type: none;">
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/carousel.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">Carousel</a></li>
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/collapsible.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">Collapsible</a></li>
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/dialogs.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">Dialogs</a></li>
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/dropdown.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">Dropdown</a></li>
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/feature-discovery.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">FeatureDiscovery</a></li>
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/media.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">Media</a></li>
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/modals.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">Modals</a></li>
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/parallax.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">Parallax</a></li>
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/pushpin.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">Pushpin</a></li>
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/scrollfire.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">ScrollFire</a></li>
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/scrollspy.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">Scrollspy</a></li>
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/side-nav.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">SideNav</a></li>
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/tabs.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">Tabs</a></li>
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/transitions.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">Transitions</a></li>
+                  <li style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px; padding: 0;"><a href="http://materializecss.com/waves.html" style="background-color: transparent; padding: 0 37.5px 0 45px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; display: block; font-size: 13px; font-weight: 400; height: 44px; line-height: 44px;">Waves</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="bold" style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px;"><a href="http://materializecss.com/mobile.html" class="waves-effect waves-teal" style="background-color: transparent; padding: 0 30px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; position: relative; cursor: pointer; display: block; overflow: hidden; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; vertical-align: middle; z-index: 1; transition: .3s ease-out; font-size: 13px; font-weight: 500; height: 44px; line-height: 44px;">Mobile</a></li>
+        <li class="bold" style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px;"><a href="http://materializecss.com/showcase.html" class="waves-effect waves-teal" style="background-color: transparent; padding: 0 30px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; position: relative; cursor: pointer; display: block; overflow: hidden; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; vertical-align: middle; z-index: 1; transition: .3s ease-out; font-size: 13px; font-weight: 500; height: 44px; line-height: 44px;">Showcase</a></li>
+        <li class="bold" style="box-sizing: inherit; list-style-type: none; float: none; line-height: 44px;"><a href="http://materializecss.com/themes.html" class="waves-effect waves-teal" style="background-color: transparent; padding: 0 30px; box-sizing: inherit; color: rgba(0,0,0,0.87); text-decoration: none; -webkit-tap-highlight-color: transparent; position: relative; cursor: pointer; display: block; overflow: hidden; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; vertical-align: middle; z-index: 1; transition: .3s ease-out; font-size: 13px; font-weight: 500; height: 44px; line-height: 44px;">Themes<span class="new badge" style="box-sizing: border-box; padding: 0 6px; min-width: 3rem; margin-left: 14px; text-align: center; font-size: 0.8rem; line-height: 22px; height: 22px; color: #fff; float: right; font-weight: 300; background-color: #26a69a; border-radius: 2px; margin-top: calc(22px - 11px);"></span></a></li>
+      </ul>
+    </header>
+    <main style="display: block; box-sizing: inherit; padding-left: 300px;">      <div class="section no-pad-bot" id="index-banner" style="box-sizing: inherit; padding-top: 1rem; padding-bottom: 0; background-color: #ee6e73;">
+        <div class="container" style="box-sizing: inherit; max-width: 1280px; width: 90%; position: relative; margin: 0 auto;">
+          <h1 class="header center-on-small-only" style="font-size: 4.2rem; box-sizing: inherit; font-weight: 300; line-height: 110%; margin: 16px 0 1.68rem; -webkit-font-smoothing: antialiased; color: #FFF;">Materialize</h1>
+          <div class="row center" style="box-sizing: inherit; margin-left: -.75rem; margin-right: -.75rem; margin-bottom: 20px; vertical-align: middle;" align="center">
+            <h4 class="header col s12 light center" style="box-sizing: border-box; margin: 1.14rem 0 40px auto; padding: 0 .75rem; float: left; min-height: 1px; width: 100%; left: auto; right: auto; font-weight: 300; line-height: 110%; font-size: 2.28rem; -webkit-font-smoothing: antialiased; color: #FFF; vertical-align: middle;" align="center">A modern responsive front-end framework based on Material Design</h4>
+          </div>
+          <div class="row center" style="box-sizing: inherit; margin-left: -.75rem; margin-right: -.75rem; margin-bottom: 20px; vertical-align: middle;" align="center">
+            <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light" style="background-color: #f3989b; padding: 0 2rem; border: none; box-sizing: inherit; color: #fff; text-decoration: none; -webkit-tap-highlight-color: transparent; box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2); border-radius: 2px; display: inline-block; height: 70px; line-height: 70px; text-transform: uppercase; vertical-align: middle; font-size: 18px; outline: 0; text-align: center; letter-spacing: .5px; transition: .3s ease-out; cursor: pointer; position: relative; overflow: hidden; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; z-index: 1; width: 260px; font-weight: 400;">Get Started</a>
+          </div>
+          <div class="row center" style="box-sizing: inherit; margin-left: -.75rem; margin-right: -.75rem; margin-bottom: 20px; vertical-align: middle;" align="center"><a class="red-text text-lighten-4" href="https://github.com/Dogfalo/materialize" style="color: #FFCDD2 !important; background-color: transparent; box-sizing: inherit; text-decoration: none; -webkit-tap-highlight-color: transparent;">beta release v0.98.2</a></div>
+
+          <div class="buysellads-header buysellads-homepage row center" style="box-sizing: inherit; vertical-align: middle; margin: 30px -.75rem 20px;" align="center">
+            <!-- CarbonAds Zone Code -->
+            
+          </div>
+          <br style="box-sizing: inherit;">
+
+        </div>
+        <div class="github-commit" style="box-sizing: inherit; height: 64px; line-height: 36px; background-color: #5c5757; padding: 14px 0; color: #e6e5e5; font-size: .9rem;">
+          <div class="container" style="box-sizing: inherit; max-width: 1280px; width: 90%; position: relative; margin: 0 auto;">
+            <div class="commit" style="box-sizing: inherit;">
+              Latest Commit on Github:
+                
+              <a href="http://materializecss.com/" class="sha" style="background-color: transparent; box-sizing: inherit; color: #f0f0f0; text-decoration: none; -webkit-tap-highlight-color: transparent; margin: 0 6px;"></a>
+                
+              <span class="date" style="box-sizing: inherit;"></span>
+              <a id="github-button" href="https://github.com/Dogfalo/materialize" class="btn-flat right grey-text text-lighten-5 waves-effect waves-light hide-on-small-only" style="color: #fafafa !important; padding: 0 2rem; border: none; background-color: #6f6d6d; box-sizing: inherit; text-decoration: none; -webkit-tap-highlight-color: transparent; float: right !important; border-radius: 2px; display: inline-block; height: 36px; line-height: 36px; text-transform: uppercase; vertical-align: middle; font-size: 1rem; outline: 0; box-shadow: none; cursor: pointer; transition: .25s ease; position: relative; overflow: hidden; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; z-index: 1;">Github</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" style="box-sizing: inherit; max-width: 1280px; width: 90%; margin: 0 auto;">
+        <div class="section" style="box-sizing: inherit; padding-top: 1rem; padding-bottom: 1rem;">
+
+          <div class="row" style="box-sizing: inherit; margin-left: -.75rem; margin-right: -.75rem; margin-bottom: 20px;">
+            <div class="col s12 m8 offset-m2" style="box-sizing: border-box; padding: 0 .75rem; float: left; min-height: 1px; width: 100%; margin-left: auto; left: auto; right: auto;">
+              <br style="box-sizing: inherit;">
+              <img id="responsive-img" src="http://materializecss.com/images/responsive.png" style="box-sizing: inherit; width: 80%; display: block; margin: 0 auto; border: 0;">
+            </div>
+          </div>
+
+          <div class="row" style="box-sizing: inherit; margin-left: -.75rem; margin-right: -.75rem; margin-bottom: 20px;">
+            <h3 class="col s12 light center header" style="box-sizing: border-box; margin: 1.46rem 0 1.168rem auto; padding: 0 .75rem; float: left; min-height: 1px; width: 100%; left: auto; right: auto; font-weight: 300; line-height: 110%; font-size: 2.92rem; -webkit-font-smoothing: antialiased; color: #ee6e73; vertical-align: middle;" align="center">Materialize simplifies life for developers and the users they serve.</h3>
+          </div>
+
+          <!--   Promo Section   -->
+          <div class="row" style="box-sizing: inherit; margin-left: -.75rem; margin-right: -.75rem; margin-bottom: 20px;">
+            <div class="col s12 m4" style="box-sizing: border-box; padding: 0 .75rem; float: left; min-height: 1px; width: 100%; margin-left: auto; left: auto; right: auto;">
+              <div class="center promo" style="box-sizing: inherit; width: 100%; vertical-align: middle;" align="center">
+                <i class="material-icons" style="box-sizing: inherit; margin: 40px 0; line-height: 1; text-rendering: optimizeLegibility; -webkit-font-feature-settings: 'liga'; -moz-font-feature-settings: 'liga'; font-feature-settings: 'liga'; color: #ee6e73; font-size: 7rem; display: block; font-family: 'Material Icons'; font-weight: normal; font-style: normal; letter-spacing: normal; text-transform: none; white-space: nowrap; word-wrap: normal; direction: ltr;">flash_on</i>
+                <p class="promo-caption" style="box-sizing: inherit; padding: 0; color: rgba(0,0,0,0.71); -webkit-font-smoothing: antialiased; font-size: 1.7rem; font-weight: 500; margin-top: 5px; margin-bottom: 0;">Speeds up development</p>
+                <p class="light center" style="box-sizing: inherit; font-weight: 300; color: rgba(0,0,0,0.71); -webkit-font-smoothing: antialiased; vertical-align: middle; padding: 0;" align="center">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+              </div>
+            </div>
+
+            <div class="col s12 m4" style="box-sizing: border-box; padding: 0 .75rem; float: left; min-height: 1px; width: 100%; margin-left: auto; left: auto; right: auto;">
+              <div class="center promo" style="box-sizing: inherit; width: 100%; vertical-align: middle;" align="center">
+                <i class="material-icons" style="box-sizing: inherit; margin: 40px 0; line-height: 1; text-rendering: optimizeLegibility; -webkit-font-feature-settings: 'liga'; -moz-font-feature-settings: 'liga'; font-feature-settings: 'liga'; color: #ee6e73; font-size: 7rem; display: block; font-family: 'Material Icons'; font-weight: normal; font-style: normal; letter-spacing: normal; text-transform: none; white-space: nowrap; word-wrap: normal; direction: ltr;">group</i>
+                <p class="promo-caption" style="box-sizing: inherit; padding: 0; color: rgba(0,0,0,0.71); -webkit-font-smoothing: antialiased; font-size: 1.7rem; font-weight: 500; margin-top: 5px; margin-bottom: 0;">User Experience Focused</p>
+                <p class="light center" style="box-sizing: inherit; font-weight: 300; color: rgba(0,0,0,0.71); -webkit-font-smoothing: antialiased; vertical-align: middle; padding: 0;" align="center">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+              </div>
+            </div>
+
+            <div class="col s12 m4" style="box-sizing: border-box; padding: 0 .75rem; float: left; min-height: 1px; width: 100%; margin-left: auto; left: auto; right: auto;">
+              <div class="center promo" style="box-sizing: inherit; width: 100%; vertical-align: middle;" align="center">
+                <i class="material-icons" style="box-sizing: inherit; margin: 40px 0; line-height: 1; text-rendering: optimizeLegibility; -webkit-font-feature-settings: 'liga'; -moz-font-feature-settings: 'liga'; font-feature-settings: 'liga'; color: #ee6e73; font-size: 7rem; display: block; font-family: 'Material Icons'; font-weight: normal; font-style: normal; letter-spacing: normal; text-transform: none; white-space: nowrap; word-wrap: normal; direction: ltr;">settings</i>
+                <p class="promo-caption" style="box-sizing: inherit; padding: 0; color: rgba(0,0,0,0.71); -webkit-font-smoothing: antialiased; font-size: 1.7rem; font-weight: 500; margin-top: 5px; margin-bottom: 0;">Easy to work with</p>
+                <p class="light center" style="box-sizing: inherit; font-weight: 300; color: rgba(0,0,0,0.71); -webkit-font-smoothing: antialiased; vertical-align: middle; padding: 0;" align="center">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="divider" style="box-sizing: inherit; height: 1px; overflow: hidden; background-color: #e0e0e0;"></div>
+        <div class="section" style="box-sizing: inherit; padding-top: 1rem; padding-bottom: 1rem;">
+          <div class="row center" style="box-sizing: inherit; margin-left: -.75rem; margin-right: -.75rem; margin-bottom: 20px; vertical-align: middle;" align="center">
+            <h3 class="light header" style="box-sizing: inherit; font-weight: 300; line-height: 110%; font-size: 2.92rem; margin: 1.46rem 0 1.168rem; -webkit-font-smoothing: antialiased; color: #ee6e73;">Showcase</h3>
+            <p class="col s12 m8 offset-m2 caption" style="box-sizing: border-box; padding: 0 .75rem; float: left; min-height: 1px; width: 100%; margin-left: auto; left: auto; right: auto; color: rgba(0,0,0,0.71); -webkit-font-smoothing: antialiased; font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">Checkout what people are creating with Materialize. Get inspired by these beautiful sites and you can even submit your own website to be showcased here.</p>
+            <a href="http://materializecss.com/showcase.html" class="btn-large waves-effect waves-light" style="background-color: #26a69a; padding: 0 2rem; border: none; box-sizing: inherit; color: #fff; text-decoration: none; -webkit-tap-highlight-color: transparent; box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2); border-radius: 2px; display: inline-block; height: 54px; line-height: 54px; text-transform: uppercase; vertical-align: middle; font-size: 1rem; outline: 0; text-align: center; letter-spacing: .5px; transition: .3s ease-out; cursor: pointer; position: relative; overflow: hidden; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; z-index: 1;">Explore our Showcase</a>
+          </div>
+        </div>
+        <div class="divider" style="box-sizing: inherit; height: 1px; overflow: hidden; background-color: #e0e0e0;"></div>
+        <div class="section" style="box-sizing: inherit; padding-top: 1rem; padding-bottom: 1rem;">
+          <div class="row center" style="box-sizing: inherit; margin-left: -.75rem; margin-right: -.75rem; margin-bottom: 20px; vertical-align: middle;" align="center">
+            <h3 class="light header" style="box-sizing: inherit; font-weight: 300; line-height: 110%; font-size: 2.92rem; margin: 1.46rem 0 1.168rem; -webkit-font-smoothing: antialiased; color: #ee6e73;">Themes</h3>
+            <div class="col s12 m6 offset-m3" style="box-sizing: border-box; padding: 0 .75rem; float: left; min-height: 1px; width: 100%; margin-left: auto; left: auto; right: auto;">
+              <p class="caption" style="box-sizing: inherit; color: rgba(0,0,0,0.71); -webkit-font-smoothing: antialiased; font-size: 1.25rem; padding: 0; font-weight: 300; margin-bottom: 30px;">
+              Take a look at our official themes for Materialize.</p>
+              <img width="100%" src="https://s23.postimg.org/9g7ajckrf/thunder.png" alt="" style="box-sizing: inherit; border: 0;">
+              <br style="box-sizing: inherit;"><br style="box-sizing: inherit;">
+              <a href="http://materializecss.com/themes.html" class="btn-large waves-effect waves-light" style="background-color: #26a69a; padding: 0 2rem; border: none; box-sizing: inherit; color: #fff; text-decoration: none; -webkit-tap-highlight-color: transparent; box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2); border-radius: 2px; display: inline-block; height: 54px; line-height: 54px; text-transform: uppercase; vertical-align: middle; font-size: 1rem; outline: 0; text-align: center; letter-spacing: .5px; transition: .3s ease-out; cursor: pointer; position: relative; overflow: hidden; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; z-index: 1;">Explore our Themes</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </main>    <footer class="page-footer" style="display: block; box-sizing: inherit; padding-top: 20px; background-color: #ee6e73; padding-left: 300px; font-size: .9rem;">
+      <div class="container" style="box-sizing: inherit; max-width: 1280px; width: 90%; margin: 0 auto;">
+        <div class="row" style="box-sizing: inherit; margin-left: -.75rem; margin-right: -.75rem; margin-bottom: 20px;">
+          <div class="col l4 s12" style="box-sizing: border-box; padding: 0 .75rem; float: left; min-height: 1px; width: 100%; margin-left: auto; left: auto; right: auto;">
+            <h5 class="white-text" style="color: #fff !important; box-sizing: inherit; font-weight: 400; line-height: 110%; margin: .82rem 0 .656rem; font-size: 1.64rem; -webkit-font-smoothing: antialiased;">Help Materialize Grow</h5>
+            <p class="grey-text text-lighten-4" style="color: #f5f5f5 !important; box-sizing: inherit; -webkit-font-smoothing: antialiased; padding: 0;">We hope you have enjoyed using Materialize! If you feel Materialize has helped you out and want to support the team, send us over a donation! Any amount would help support and continue development on this project and is greatly appreciated.</p>
+            <form id="paypal-donate" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="box-sizing: inherit;">
+<input type="hidden" name="cmd" value="_s-xclick" style="color: inherit; margin: 0; line-height: normal; font-style: normal; font-variant: normal; font-weight: normal; font-size: normal; box-sizing: inherit;">
+<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----MIIHLwYJKoZIhvcNAQcEoIIHIDCCBxwCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYC2O5rnsmP26R+2wNew3Jc3rCzBzw8LpJh1TTRZyMIFMYv/voKC1TMEvxU0ct4gdsZ29zARE96gRsCPVtVpY1hGr0NivLXeiHyw3xoW9UfzjcI9gZy5PZYoNv2xkTMj+jUkzuBMDiB2JfrIH7ZNxbcK1m/ep7Luoo1CR8JmYNCtlzELMAkGBSsOAwIaBQAwgawGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQI/PHaKaPxsg2AgYh0FZUDlxXaZSGYZJiUkF4L0p9hZn0tYmT6kqOqB50541GOsZtJSVAO/F+Qz5I9EsCuGve7GLKSBufhNjWa24ay5T2hkGJkAzISlqS2qBQSFDDpHDyEnNSZ2vPG2K8Bepc/SQD5nurs+vyC55axU4OnG33RBEtAmdOrAlZGxwzDBSjg4us1epUyoIIDhzCCA4MwggLsoAMCAQICAQAwDQYJKoZIhvcNAQEFBQAwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tMB4XDTA0MDIxMzEwMTMxNVoXDTM1MDIxMzEwMTMxNVowgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDBR07d/ETMS1ycjtkpkvjXZe9k+6CieLuLsPumsJ7QC1odNz3sJiCbs2wC0nLE0uLGaEtXynIgRqIddYCHx88pb5HTXv4SZeuv0Rqq4+axW9PLAAATU8w04qqjaSXgbGLP3NmohqM6bV9kZZwZLR/klDaQGo1u9uDb9lr4Yn+rBQIDAQABo4HuMIHrMB0GA1UdDgQWBBSWn3y7xm8XvVk/UtcKG+wQ1mSUazCBuwYDVR0jBIGzMIGwgBSWn3y7xm8XvVk/UtcKG+wQ1mSUa6GBlKSBkTCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb22CAQAwDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0BAQUFAAOBgQCBXzpWmoBa5e9fo6ujionW1hUhPkOBakTr3YCDjbYfvJEiv/2P+IobhOGJr85+XHhN0v4gUkEDI8r2/rNk1m0GA8HKddvTjyGw/XqXa+LSTlDYkqI8OwR8GEYj4efEtcRpRYBxV8KxAW93YDWzFGvruKnnLbDAF6VR5w/cCMn5hzGCAZowggGWAgEBMIGUMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbQIBADAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMTQxMjE1MDcwNTI3WjAjBgkqhkiG9w0BCQQxFgQUTOnEae05+jEbHsz0um3L3/Cl/zgwDQYJKoZIhvcNAQEBBQAEgYAGuieIpSk7XCxyo4RieZQ/SO0EHUYEW9B7KFJB9qZ1+yCKpUm7prwsGGOJAAdqKOw59I7qjLQI5cFJz/O8Ivb14TclAZiKTnOCB/wO1QHp+9s+hF00D6v0TDetLm0GLnk/7ljWvNq1pTyiMTLVg4yw1dAzQE1tC6bYTtLuDhLl0Q==-----END PKCS7-----
+" style="color: inherit; margin: 0; line-height: normal; font-style: normal; font-variant: normal; font-weight: normal; font-size: normal; box-sizing: inherit;">
+<button class="btn waves-effect waves-light red lighten-3" type="submit" name="action" alt="PayPal - The safer, easier way to pay online!" style="background-color: #EF9A9A !important; margin: 0; padding: 0 2rem; border: none; color: #fff; line-height: 36px; font-style: normal; font-variant: normal; font-weight: normal; font-size: 1rem; overflow: hidden; text-transform: uppercase; -webkit-appearance: button; cursor: pointer; box-sizing: inherit; box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2); border-radius: 2px; display: inline-block; height: 36px; vertical-align: middle; -webkit-tap-highlight-color: transparent; outline: 0; text-decoration: none; text-align: center; letter-spacing: .5px; transition: .3s ease-out; position: relative; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; z-index: 1;">Donate Now
+</button>
+</form>
+
+          </div>
+          <div class="col l4 s12" style="box-sizing: border-box; padding: 0 .75rem; float: left; min-height: 1px; width: 100%; margin-left: auto; left: auto; right: auto;">
+            <h5 class="white-text" style="color: #fff !important; box-sizing: inherit; font-weight: 400; line-height: 110%; margin: .82rem 0 .656rem; font-size: 1.64rem; -webkit-font-smoothing: antialiased;">Join the Discussion</h5>
+            <p class="grey-text text-lighten-4" style="color: #f5f5f5 !important; box-sizing: inherit; -webkit-font-smoothing: antialiased; padding: 0;">We have a Gitter chat room set up where you can talk directly with us. Come in and discuss new features, future goals, general problems or questions, or anything else you can think of.</p>
+            <a class="btn waves-effect waves-light red lighten-3" target="_blank" href="https://gitter.im/Dogfalo/materialize" style="background-color: #EF9A9A !important; padding: 0 2rem; border: none; box-sizing: inherit; color: #fff; text-decoration: none; -webkit-tap-highlight-color: transparent; box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2); border-radius: 2px; display: inline-block; height: 36px; line-height: 36px; text-transform: uppercase; vertical-align: middle; font-size: 1rem; outline: 0; text-align: center; letter-spacing: .5px; transition: .3s ease-out; cursor: pointer; position: relative; overflow: hidden; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; z-index: 1;">Chat</a>
+          </div>
+          <div class="col l4 s12" style="overflow: hidden; padding: 0 .75rem; box-sizing: border-box; float: left; min-height: 1px; width: 100%; margin-left: auto; left: auto; right: auto;">
+            <h5 class="white-text" style="color: #fff !important; box-sizing: inherit; font-weight: 400; line-height: 110%; margin: .82rem 0 .656rem; font-size: 1.64rem; -webkit-font-smoothing: antialiased;">Connect</h5>
+            <iframe src="http://ghbtns.com/github-btn.html?user=dogfalo&amp;repo=materialize&amp;type=watch&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30" style="box-sizing: inherit;"></iframe>
+            <br style="box-sizing: inherit;">
+            <a href="https://twitter.com/MaterializeCSS" class="twitter-follow-button" data-show-count="true" data-size="large" data-dnt="true" style="background-color: transparent; box-sizing: inherit; color: #039be5; text-decoration: none; -webkit-tap-highlight-color: transparent;">Follow @MaterializeCSS</a>
+            <br style="box-sizing: inherit;">
+            <div class="g-follow" data-annotation="bubble" data-height="24" data-href="https://plus.google.com/108619793845925798422" data-rel="publisher" style="box-sizing: inherit;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright" style="box-sizing: inherit; padding: 10px 0px; overflow: hidden; min-height: 50px; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; color: rgba(255,255,255,0.8); background-color: rgba(51,51,51,0.08); font-weight: 300;">
+        <div class="container" style="box-sizing: inherit; max-width: 1280px; width: 90%; margin: 0 auto;">
+        © 2014-2017 Materialize, All rights reserved.
+        <a class="grey-text text-lighten-4 right" href="https://github.com/Dogfalo/materialize/blob/master/LICENSE" style="color: #f5f5f5 !important; background-color: transparent; box-sizing: inherit; text-decoration: none; -webkit-tap-highlight-color: transparent; float: right !important;">MIT License</a>
+        </div>
+      </div>
+    </footer>
+
+    <!--  Scripts-->
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- Twitter Button -->
+    
+
+    <!-- Google Plus Button-->
+    
+
+    <!--  Google Analytics  -->
+    
+
+  </body>
+</html>

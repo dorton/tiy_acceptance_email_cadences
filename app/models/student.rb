@@ -1,6 +1,8 @@
 class Student < ApplicationRecord
   belongs_to :cohort
 
+  scope :ok_to_email, -> { where(do_not_send: false)   }
+
   scope :open_todos, -> {
       where(down_payment: false)
       .or(where(enrollment_agreement: false))
@@ -23,7 +25,7 @@ class Student < ApplicationRecord
       student.first_name = row['First Name']
       student.last_name = row['Last Name']
       student.enrollment_agreement = row['Student Has Signed Student Agreement?'] == 'Yes'
-      student.down_payment = row['Financial Status'] == 'Deposit Received'
+      student.down_payment = row['Most Current Financial Detail: Deposit Paid?'] == '1'
       student.financially_cleared = row['Financial Status'] == 'Financially Cleared'
       student.yes_we_code = row['Financial Status'] == 'Full Tuition Grant'
       student.save!

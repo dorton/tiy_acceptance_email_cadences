@@ -1,5 +1,6 @@
 class StudentMailer < ApplicationMailer
   include ActionView::Helpers::DateHelper
+  
 
   def weekly_mailer(cohort, student)
     @cohort = cohort

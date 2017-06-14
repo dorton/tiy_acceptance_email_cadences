@@ -1,0 +1,169 @@
+menu ( # )
+* Your browser does not support SVG 
+( http://materializecss.com/ )
+*
+search
+
+* About ( http://materializecss.com/about.html )
+* Getting Started 
+( http://materializecss.com/getting-started.html )
+* * CSS
+
+* Color ( http://materializecss.com/color.html )
+* Grid ( http://materializecss.com/grid.html )
+* Helpers ( http://materializecss.com/helpers.html )
+* Media ( http://materializecss.com/media-css.html )
+* Pulse ( http://materializecss.com/pulse.html )
+* Sass ( http://materializecss.com/sass.html )
+* Shadow ( http://materializecss.com/shadow.html )
+* Table ( http://materializecss.com/table.html )
+* Transitions ( http://materializecss.com/css-transitions.html )
+* Typography ( http://materializecss.com/typography.html )
+
+* Components
+
+* Badges ( http://materializecss.com/badges.html ) 
+* Buttons ( http://materializecss.com/buttons.html )
+* Breadcrumbs ( http://materializecss.com/breadcrumbs.html )
+* Cards ( http://materializecss.com/cards.html )
+* Chips ( http://materializecss.com/chips.html )
+* Collections ( http://materializecss.com/collections.html )
+* Footer ( http://materializecss.com/footer.html )
+* Forms ( http://materializecss.com/forms.html )
+* Icons ( http://materializecss.com/icons.html )
+* Navbar ( http://materializecss.com/navbar.html )
+* Pagination ( http://materializecss.com/pagination.html )
+* Preloader ( http://materializecss.com/preloader.html )
+
+* JavaScript
+
+* Carousel 
+( http://materializecss.com/carousel.html )
+* Collapsible ( http://materializecss.com/collapsible.html )
+* Dialogs ( http://materializecss.com/dialogs.html )
+* Dropdown ( http://materializecss.com/dropdown.html )
+* FeatureDiscovery 
+( http://materializecss.com/feature-discovery.html )
+* Media ( http://materializecss.com/media.html )
+* Modals ( http://materializecss.com/modals.html )
+* Parallax ( http://materializecss.com/parallax.html )
+* Pushpin ( http://materializecss.com/pushpin.html )
+* ScrollFire ( http://materializecss.com/scrollfire.html )
+* Scrollspy ( http://materializecss.com/scrollspy.html )
+* SideNav ( http://materializecss.com/side-nav.html )
+* Tabs ( http://materializecss.com/tabs.html )
+* Transitions ( http://materializecss.com/transitions.html )
+* Waves ( http://materializecss.com/waves.html )
+
+* Mobile ( http://materializecss.com/mobile.html )
+* Showcase ( http://materializecss.com/showcase.html )
+* Themes ( http://materializecss.com/themes.html )
+
+***********
+Materialize
+***********
+
+A modern responsive front-end framework based on Material Design
+----------------------------------------------------------------
+
+Get Started 
+( http://materializecss.com/getting-started.html )
+
+beta release v0.98.2 
+( https://github.com/Dogfalo/materialize )
+
+Latest Commit on Github:
+
+Github ( https://github.com/Dogfalo/materialize )
+
+Materialize simplifies life for developers and the users they
+serve.
+-----------------------------------------------------------------
+
+flash_on
+Speeds up development
+
+We did most of the heavy lifting for you to
+provide a default stylings that incorporate our custom
+components. Additionally, we refined animations and transitions
+to provide a smoother experience for developers.
+
+group
+User Experience Focused
+
+By utilizing elements and principles of Material
+Design, we were able to create a framework that incorporates
+components and animations that provide more feedback to users.
+Additionally, a single underlying responsive system across all
+platforms allow for a more unified user experience.
+
+settings
+Easy to work with
+
+We have provided detailed documentation as well
+as specific code examples to help new users get started. We are
+also always open to feedback and can answer any questions a user
+may have about Materialize.
+
+Showcase
+--------
+
+Checkout what people are creating with Materialize.
+Get inspired by these beautiful sites and you can even submit
+your own website to be showcased here.
+
+Explore our Showcase 
+( http://materializecss.com/showcase.html )
+
+Themes
+------
+
+Take a look at our official themes for Materialize.
+
+Explore our Themes 
+( http://materializecss.com/themes.html )
+
+Help Materialize Grow
+---------------------
+
+We hope you have enjoyed using Materialize! If you
+feel Materialize has helped you out and want to support the team,
+send us over a donation! Any amount would help support and
+continue development on this project and is greatly appreciated.
+
+Donate Now
+
+Join the Discussion
+-------------------
+
+We have a Gitter chat room set up where you can talk
+directly with us. Come in and discuss new features, future goals,
+general problems or questions, or anything else you can think of.
+
+Chat ( https://gitter.im/Dogfalo/materialize )
+
+Connect
+-------
+
+Follow @MaterializeCSS 
+( https://twitter.com/MaterializeCSS )
+
+© 2014-2017 Materialize, All rights reserved.
+MIT License 
+( https://github.com/Dogfalo/materialize/blob/master/LICENSE )
+
+if (!window.jQuery) { document.write(''); }
+
+!function(d,s,id){var
+js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,
+'script', 'twitter-wjs');
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new
+Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-56218128-1', 'auto');
+ga('require', 'displayfeatures');
+ga('send', 'pageview');

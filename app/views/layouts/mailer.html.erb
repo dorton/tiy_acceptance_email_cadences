@@ -2,12 +2,38 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width">
+
+    <%= stylesheet_link_tag :email %>
     <style>
       /* Email styles need to be inline */
     </style>
   </head>
 
-  <body>
-    <%= yield %>
+
+  <body class="grey lighten-2">
+
+    <div class="header">
+      <div class="row">
+        <div class="col s12">
+          <div class="col s6">
+              <%= link_to 'http://theironyard.com', class: "logo", id: "logo-container" do  %>
+                <%= image_tag "https://gallery.mailchimp.com/faf8950d348af93ef0627852f/images/59988fe2-51aa-4332-930b-36b96419653d.png" %>
+              <% end %>
+          </div>
+          <div class="col s6">
+            <div class="greeting">
+              <h5 class="">Greetings from The Iron Yard</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div class="article white">
+        <%= yield %>
+      </div>
+
+
   </body>
 </html>

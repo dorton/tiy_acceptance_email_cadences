@@ -2,6 +2,9 @@
   <div class="col">
     <%= f.input :transcript, input_html: { id: "transcript-#{student.id}" }  %>
   </div>
+  <div class="col">
+    <%= f.input :do_not_send, label: "Do Not Send Email", input_html: { id: "dont_send-#{student.id}" }  %>
+  </div>
   <br> <br>
   <div class="row">
     <div class="form-actions">
