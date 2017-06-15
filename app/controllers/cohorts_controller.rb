@@ -50,6 +50,7 @@ class CohortsController < ApplicationController
       if @cohort.update(cohort_params)
         format.html { redirect_to @cohort, notice: 'Cohort was successfully updated.' }
         format.json { render :show, status: :ok, location: @cohort }
+        format.js
       else
         format.html { render :edit }
         format.json { render json: @cohort.errors, status: :unprocessable_entity }
@@ -75,6 +76,6 @@ class CohortsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cohort_params
-      params.require(:cohort).permit(:start_date, :user_id)
+      params.require(:cohort).permit(:start_date, :user_id, :email_body)
     end
 end

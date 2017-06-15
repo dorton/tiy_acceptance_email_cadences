@@ -1,6 +1,13 @@
 
 <div class="row">
-
+  <h4><%= @cohort.start_date.strftime('%m/%d/%Y') %> Cohort -   <%= link_to "Edit Cohort", edit_cohort_path(@cohort), class: "btn" %>
+</h4>
+</div>
+<div class="row">
+  <div class="divider"></div>
+</div>
+<div class="row">
+  <h5>All the Student Things</h5>
 </div>
 
 <div class="row">
@@ -28,6 +35,7 @@
               <%= link_to student.name, cohort_student_path(@cohort, student) %> | <%= mail_to student.email, student.email %> <br>
 
               <%= render partial: "students/student_updates", locals: {student: student} %>
+
             </li>
           <% end %>
         </ul>
@@ -38,16 +46,38 @@
 
 
 <div class="row">
-  <%= link_to "Send Weeks Emails", send_email_path(@cohort), class: "btn", method: :post, remote: true, data: { confirm: 'Are you sure?', "disable-with": "Sending..." }%>
+  <%= form_tag "/cohorts/#{@cohort.id}/students/import", method: :post, class: 'dropzone form', id: 'media-dropzone' do %>
+    <div class="dz-message" data-dz-message><span>Yo! Drop Dat CSV, Tho</span></div>
+    <div class="fallback">
+      <%= file_field_tag 'media', multiple: true %>
+    </div>
+  <% end %>
 </div>
+
+
 
 <div class="row">
-  <%= link_to "Edit Cohort", edit_cohort_path(@cohort), class: "btn" %>
+  <div class="divider"></div>
+</div>
+<div class="row">
+  <h5>All the Email Things</h5>
 </div>
 
-<%= form_tag "/cohorts/#{@cohort.id}/students/import", method: :post, class: 'dropzone form', id: 'media-dropzone' do %>
-  <div class="dz-message" data-dz-message><span>Drop Yo .CSV Here</span></div>
-  <div class="fallback">
-    <%= file_field_tag 'media', multiple: true %>
+  <ul class="collapsible" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header"><i class="material-icons">filter_drama</i>Edit Email Body</div>
+      <div class="collapsible-body"><span>
+        <div class="row">
+          <%= render partial: "edit_email_body", locals: {cohort: @cohort} %>
+        </div>
+      </span></div>
+    </li>
+  </ul>
+
+<div class="row">
+  <div class="divider"></div>
+
+</div>
+  <div class="row">
+    <%= link_to "Send Weeks Emails", send_email_path(@cohort), class: "btn", method: :post, remote: true, data: { confirm: 'Are you sure?', "disable-with": "Sending..." }%>
   </div>
-<% end %>
