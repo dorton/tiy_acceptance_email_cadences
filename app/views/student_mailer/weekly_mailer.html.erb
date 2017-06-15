@@ -1,28 +1,28 @@
-    <div class="row">
-      <p>Greetings, <%= @student.first_name %>!</p>
+<div class="row">
+  <p>Greetings, <%= @student.first_name %>!</p>
 
-      <p><%= @cohort.email_body %></p>
+  <p><%= @cohort.email_body %></p>
 
-    <ul class="collection with-header">
-      <li class="collection-header"><h4>Your weekly code challenge:</h4></li>
-      <li class="collection-item"><%= link_to @weekly_challenge.newline_url, @weekly_challenge.newline_url %></li>
-    </ul>
+<ul class="collection with-header">
+  <li class="collection-header"><h4>Your weekly code challenge:</h4></li>
+  <li class="collection-item"><%= link_to @weekly_challenge.newline_url, @weekly_challenge.newline_url %></li>
+</ul>
 
-    <% if @announcements.present? %>
-      <ul class="collection with-header">
-        <li class="collection-header"><h4>A Few Announcements:</h4></li>
-        <% @announcements.order(:date).each do |announcement| %>
-          <li class="collection-item"><%= announcement.date.strftime('%m/%d/%Y') %> | <%= announcement.title %></li>
-        <% end %>
-      </ul>
+<% if @announcements.present? %>
+  <ul class="collection with-header">
+    <li class="collection-header"><h4>A Few Announcements:</h4></li>
+    <% @announcements.order(:date).each do |announcement| %>
+      <li class="collection-item"><%= announcement.date.strftime('%m/%d/%Y') %> | <%= announcement.title %></li>
     <% end %>
+  </ul>
+<% end %>
 
-    <% if @todos.present? %>
-      <ul class="collection with-header">
-        <li class="collection-header"><h4>A Few Gentle Reminders:</h4></li>
-        <% @todos.each do |todo| %>
-          <li class="collection-item"><%= todo %></li>
-        <% end %>
-      </ul>
+<% if @todos.present? %>
+  <ul class="collection with-header">
+    <li class="collection-header"><h4>A Few Gentle Reminders:</h4></li>
+    <% @todos.each do |todo| %>
+      <li class="collection-item"><%= todo %></li>
     <% end %>
-    </div>
+  </ul>
+<% end %>
+</div>
