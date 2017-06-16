@@ -1,0 +1,28 @@
+  <% @meetups.order(:date).each do |announ| %>
+    <li class="collection-item">
+      <table class="bordered">
+        <tbody>
+          <tr>
+            <td><h5><%= link_to announ.title, announ.event_url %></h5></td>
+          </tr>
+          <tr>
+            <td>Group: <%= announ.host_group %></td>
+          </tr>
+          <tr>
+            <td>When: <%= announ.date.strftime('%m/%d/%Y - %l:%M %p') %></td>
+          </tr>
+
+          <% if announ.location? %>
+          <tr>
+            <td>Where: <%= announ.location %></td>
+          </tr>
+          <% end %>
+          <% if announ.description? %>
+          <tr>
+            <td><%= announ.description.html_safe %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </li>
+  <% end %>

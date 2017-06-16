@@ -17,6 +17,7 @@ class StudentsController < ApplicationController
     @weekly_challenge = CodeChallenge.weekly(@cohort.start_date)
     @announcements = @cohort.announcements.where('date > ?', Date.today).where('date < ?', Date.today + 3.weeks)
     @todos = Student.todos(@student, @cohort.start_date)
+    @meetups = @cohort.announcements.where(meetup: true).where('date > ?', Date.today).where('date <= ?', Date.today + 8.days)
   end
 
   def send_mail

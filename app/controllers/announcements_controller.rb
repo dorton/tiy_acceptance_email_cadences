@@ -4,7 +4,8 @@ class AnnouncementsController < ApplicationController
   # GET /announcements
   # GET /announcements.json
   def index
-    @announcements = Announcement.all
+    @announcements = Announcement.where(meetup: false)
+    @meetups = Announcement.where(meetup: true)
   end
 
   # GET /announcements/1
@@ -69,6 +70,6 @@ class AnnouncementsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def announcement_params
-      params.require(:announcement).permit(:date, :title, :location, :cohort_id)
+      params.require(:announcement).permit(:date, :title, :location, :cohort_id, :description, :event_url)
     end
 end
