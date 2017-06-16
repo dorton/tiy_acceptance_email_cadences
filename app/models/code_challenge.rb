@@ -1,6 +1,7 @@
 class CodeChallenge < ApplicationRecord
   def self.weekly(date)
     weeks_apart = date.cweek - Date.today.cweek
-    self.find(weeks_apart)
+    self.find_by(weeks_out: weeks_apart.to_s)
+
   end
 end

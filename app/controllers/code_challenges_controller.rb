@@ -69,6 +69,6 @@ class CodeChallengesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def code_challenge_params
-      params.require(:code_challenge).permit(:newline_url, :description)
+      params.require(:code_challenge).permit(:newline_url, :description, :weeks_out)
     end
 end
