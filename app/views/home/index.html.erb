@@ -32,7 +32,7 @@
 <div class="row">
   <ul class="collection with-header">
     <li class="collection-header"><h4>Code Challenges</h4></li>
-    <li class="collection-item"><%= @weekly_challenge.description %> <%= link_to "Edit", edit_code_challenge_path(@weekly_challenge), class: "btn" %></li>
+    <li class="collection-item"><%= @weekly_challenge.description if @weekly_challenge.present? %> <%= link_to "Edit", edit_code_challenge_path(@weekly_challenge), class: "btn" if @weekly_challenge.present? %></li>
   </ul>
 </div>
 
