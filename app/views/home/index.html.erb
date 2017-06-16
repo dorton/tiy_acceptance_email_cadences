@@ -15,12 +15,14 @@
   <%= link_to "New Cohort", new_cohort_path, class: "btn" %>
 </div>
 
+<% if @announcements.present? %>
 <div class="row">
   <ul class="collection with-header">
     <li class="collection-header"><h4>Upcomming Announcements</h4></li>
     <%= render 'announcements/announcements' %>
   </ul>
 </div>
+<% end %>
 
 <div class="row">
   <%= link_to "New Announcement", new_announcement_path, class: "btn" %>
@@ -35,12 +37,14 @@
 </div>
 
 <div class="row">
+  <%= link_to "New Code Challenge", "#", class: "btn " %>
+</div>
+
+<% if @meetups.present? %>
+<div class="row">
   <ul class="collection with-header">
     <li class="collection-header"><h4>Meetups Worth Attending</h4></li>
     <%= render 'announcements/meetups' %>
   </ul>
 </div>
-
-<div class="row">
-  <%= link_to "New Code Challenge", "#", class: "btn " %>
-</div>
+<% end %>
