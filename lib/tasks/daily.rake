@@ -11,8 +11,8 @@ namespace :daily do
     raw = JSON.parse(data)
 
     raw.each do |r|
-      event_name = r["name"]
-      event_description = r["description"]
+      event_name = r["name"] if r["name"].present?
+      event_description = r["description"] if r["description"].present?
       venue_name = r["venue"]["name"] if r["venue"].present?
       date = Time.at(r["time"]/1000).to_datetime
       group = r["group"]["name"] if r["group"].present?
