@@ -26,6 +26,8 @@ class StudentsController < ApplicationController
     @students.ok_to_email.each do |student|
       StudentMailer.weekly_mailer(@cohort, student).deliver_later
     end
+    @cohort.sent_emails.create!()
+    redirect_to cohort_path(@cohort), notice: "Done and Done."
   end
 
   def import

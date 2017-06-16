@@ -72,6 +72,7 @@
         </div>
       </span></div>
     </li>
+    <li><div class="collapsible-header"><i class="material-icons">filter_drama</i>Last Email Sent: <%= @cohort.sent_emails.last.created_at.strftime('%m/%d/%Y') if @cohort.sent_emails.present? %></div></li>
   </ul>
 
 <div class="row">
@@ -79,5 +80,5 @@
 
 </div>
   <div class="row">
-    <%= link_to "Send Weeks Emails", send_email_path(@cohort), class: "btn", method: :post, remote: true, data: { confirm: 'Are you sure?', "disable-with": "Sending..." }%>
+    <%= link_to "Send Weeks Emails", send_email_path(@cohort), class: "btn #{'disabled' if @email_sent_today.present?}", method: :post, data: { confirm: 'Are you sure?', "disable-with": "Sending..." }%>
   </div>

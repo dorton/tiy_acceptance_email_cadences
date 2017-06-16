@@ -13,7 +13,7 @@ class CohortsController < ApplicationController
     @students = @cohort.students.all
     @students_with_no_items =  @cohort.students.no_todos
     @students_with_open_items =  @cohort.students.open_todos
-
+    @email_sent_today = @cohort.sent_emails.where(created_at: Date.today.beginning_of_day..Date.today.end_of_day)
   end
 
   # GET /cohorts/new
